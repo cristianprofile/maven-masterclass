@@ -47,6 +47,7 @@ public class HelloController {
 		baseService.saveBase(base);
 		base = new BaseRequest();
 		base.setName("masa-pan");
+		
 		baseService.saveBase(base);
 		List<BaseResponse> findAllBases = baseService.findAllBases();
 		JSONSerializer serializer = new JSONSerializer();
