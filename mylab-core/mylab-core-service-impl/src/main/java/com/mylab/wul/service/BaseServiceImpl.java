@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.mylab.wul.domain.Base;
-import com.mylab.wul.domain.Pizza;
 import com.mylab.wul.dto.BaseRequest;
 import com.mylab.wul.dto.BaseResponse;
 import com.mylab.wul.exception.BaseNotFoundException;
@@ -27,6 +26,7 @@ public class BaseServiceImpl implements BaseService {
     BaseRepository baseRepository;
 
 
+	@Override
 	public void deleteBase(BaseRequest base) throws BaseNotFoundException{
 		this.logger.debug("Begin operation: deleteBase, request:{} ", base);
 		
@@ -40,6 +40,7 @@ public class BaseServiceImpl implements BaseService {
         this.logger.debug("End operation: deleteBase ");
     }
 
+	@Override
 	public List<BaseResponse> findAllBases() {
 		this.logger.debug("Begin operation: findAllBases ");
 		List<BaseResponse> listBases = new ArrayList<BaseResponse>();
@@ -53,6 +54,7 @@ public class BaseServiceImpl implements BaseService {
         return listBases;
     }
 
+	@Override
 	public void saveBase(BaseRequest base) {
 		this.logger.debug("Begin operation: save request:{} ", base);
 		Base baseAlmacenar = new Base();

@@ -1,7 +1,5 @@
 package com.mylab.wul.dto;
 
-import java.util.Collection;
-
 public class BaseRequest {
 	
 	private String name;

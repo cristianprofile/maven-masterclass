@@ -6,5 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.mylab.wul.domain.Especialidad;
 
 @Repository
-public interface EspecialidadRepository extends JpaRepository<Especialidad, Long> {
+public interface EspecialidadRepository extends
+		JpaRepository<Especialidad, Long> {
 }

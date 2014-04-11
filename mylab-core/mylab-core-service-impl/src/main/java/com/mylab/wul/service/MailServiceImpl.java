@@ -17,6 +17,7 @@ public class MailServiceImpl implements MailService {
 	@Autowired
 	private MailSender mailSender;
 
+	@Override
 	public void sendMail(MailRequest mailrequest) {
 		this.logger.debug("Begin operation: sending mail, request:{} ",mailrequest);
 		SimpleMailMessage message = new SimpleMailMessage();

@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 import com.mylab.wul.domain.Topping;
 
 @Repository
-public interface ToppingRepository extends  JpaRepository<Topping, Long> {
+public interface ToppingRepository extends JpaRepository<Topping, Long> {
 }
