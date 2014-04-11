@@ -14,30 +14,30 @@ import com.mylab.wul.exception.BaseNotFoundException;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath*:/META-INF/spring/applicationContext-service-test.xml")
 public class BaseServiceImplTest {
-	
-	 @Autowired
-	 private BaseService baseService;
-	
+
+	@Autowired
+	private BaseService baseService;
+
 	@Transactional
-    @Test(expected = BaseNotFoundException.class)
-    public void testDeleteBaseNotExist() {
-       
-		BaseRequest base=new BaseRequest();
+	@Test(expected = BaseNotFoundException.class)
+	public void testDeleteBaseNotExist() {
+
+		BaseRequest base = new BaseRequest();
 		base.setName("margarita");
 		baseService.deleteBase(base);
 
-    }
-	
+	}
+
 	@Transactional
-    @Test
-    public void testDeleteBaseOk() {
-		
-		BaseRequest base=new BaseRequest();
+	@Test
+	public void testDeleteBaseOk() {
+
+		BaseRequest base = new BaseRequest();
 		base.setName("margarita");
 		baseService.saveBase(base);
 		Assert.assertEquals(baseService.findAllBases().size(), 1);
 		baseService.deleteBase(base);
-        Assert.assertEquals(baseService.findAllBases().size(), 0);
-    }
+		Assert.assertEquals(baseService.findAllBases().size(), 0);
+	}
 
 }

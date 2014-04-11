@@ -20,24 +20,23 @@ import com.mylab.wul.dto.MailRequest;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath*:/META-INF/spring/applicationContext-service-test.xml")
 public class MailServiceImplTest {
-	
-	 @Autowired
-	 private MailService mailService;
-	 
-	 @Autowired
-	 private Wiser wiser;
-	
-	 @Before
-		public void setup() {
 
-		 wiser.start();
-		}
-	
+	@Autowired
+	private MailService mailService;
+
+	@Autowired
+	private Wiser wiser;
+
+	@Before
+	public void setup() {
+		wiser.start();
+	}
+
 	@Transactional
-    @Test
-    public void testMailOk() throws MessagingException {
-		
-		MailRequest mailrequest=new MailRequest();
+	@Test
+	public void testMailOk() throws MessagingException {
+
+		MailRequest mailrequest = new MailRequest();
 		mailrequest.setBody("un saludo tio mi primero correo");
 		mailrequest.setSubject("mi primero correo de palo");
 		mailrequest.setTo("pepito@ole.com");
@@ -45,10 +44,9 @@ public class MailServiceImplTest {
 		List<WiserMessage> messages = wiser.getMessages();
 		Assert.assertEquals(messages.size(), 1);
 		Assert.assertNotNull(messages.get(0).getMimeMessage());
-		Assert.assertTrue(messages.get(0).getMimeMessage().getSubject().equalsIgnoreCase("mi primero correo de palo"));
-		
-		}
-		
-    
+		Assert.assertTrue(messages.get(0).getMimeMessage().getSubject()
+				.equalsIgnoreCase("mi primero correo de palo"));
+
+	}
 
 }
