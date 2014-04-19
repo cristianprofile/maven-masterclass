@@ -15,56 +15,56 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 @Entity
 public class Especialidad {
 
-	@NotNull
-	@Size(min = 2)
-	private String name;
+    @NotNull
+    @Size(min = 2)
+    private String name;
 
-	private Boolean active;
+    private Boolean active;
 
-	@Override
-	public String toString() {
-		return ReflectionToStringBuilder.toString(this,
-		        ToStringStyle.SHORT_PREFIX_STYLE);
-	}
+    @Override
+    public String toString() {
+        return ReflectionToStringBuilder.toString(this,
+                ToStringStyle.SHORT_PREFIX_STYLE);
+    }
 
-	public String getName() {
-		return this.name;
-	}
+    public String getName() {
+        return this.name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public Boolean getActive() {
-		return this.active;
-	}
+    public Boolean getActive() {
+        return this.active;
+    }
 
-	public void setActive(Boolean active) {
-		this.active = active;
-	}
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id")
-	private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    private Long id;
 
-	@Version
-	@Column(name = "version")
-	private Integer version;
+    @Version
+    @Column(name = "version")
+    private Integer version;
 
-	public Long getId() {
-		return this.id;
-	}
+    public Long getId() {
+        return this.id;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public Integer getVersion() {
-		return this.version;
-	}
+    public Integer getVersion() {
+        return this.version;
+    }
 
-	public void setVersion(Integer version) {
-		this.version = version;
-	}
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
 }

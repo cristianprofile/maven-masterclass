@@ -22,41 +22,41 @@ import com.openpojo.validation.test.impl.SetterTester;
 
 public class DtoTest {
 
-	private PojoValidator pojoValidator;
-	private List<PojoClass> pojoClasses;
+    private PojoValidator pojoValidator;
+    private List<PojoClass> pojoClasses;
 
-	private Class[] exclusionArray = { DtoTest.class, ExclusionListFilter.class };
+    private Class[] exclusionArray = { DtoTest.class, ExclusionListFilter.class };
 
-	@Before
-	public void setup() {
-		pojoValidator = new PojoValidator();
-		FilterNonConcrete filterNonConcrete = new FilterNonConcrete();
-		FilterNestedClasses filterNestedClasses = new FilterNestedClasses();
-		ExclusionListFilter exclusionListFilter = new ExclusionListFilter(exclusionArray);
+    @Before
+    public void setup() {
+        pojoValidator = new PojoValidator();
+        FilterNonConcrete filterNonConcrete = new FilterNonConcrete();
+        FilterNestedClasses filterNestedClasses = new FilterNestedClasses();
+        ExclusionListFilter exclusionListFilter = new ExclusionListFilter(exclusionArray);
 
-		FilterChain filterChain = new FilterChain(filterNonConcrete, filterNestedClasses,
-		        exclusionListFilter);
-		pojoClasses = PojoClassFactory.getPojoClasses("com.mylab.wul.dto", filterChain);
+        FilterChain filterChain = new FilterChain(filterNonConcrete, filterNestedClasses,
+                exclusionListFilter);
+        pojoClasses = PojoClassFactory.getPojoClasses("com.mylab.wul.dto", filterChain);
 
-		// Create Rules to validate structure for POJO_PACKAGE
-		pojoValidator.addRule(new NoPublicFieldsRule());
-		pojoValidator.addRule(new NoPrimitivesRule());
-		pojoValidator.addRule(new NoStaticExceptFinalRule());
-		pojoValidator.addRule(new GetterMustExistRule());
-		pojoValidator.addRule(new NoNestedClassRule());
+        // Create Rules to validate structure for POJO_PACKAGE
+        pojoValidator.addRule(new NoPublicFieldsRule());
+        pojoValidator.addRule(new NoPrimitivesRule());
+        pojoValidator.addRule(new NoStaticExceptFinalRule());
+        pojoValidator.addRule(new GetterMustExistRule());
+        pojoValidator.addRule(new NoNestedClassRule());
 
-		// Create Testers to validate behaviour for POJO_PACKAGE
-		pojoValidator.addTester(new DefaultValuesNullTester());
-		pojoValidator.addTester(new SetterTester());
-		pojoValidator.addTester(new GetterTester());
-	}
+        // Create Testers to validate behaviour for POJO_PACKAGE
+        pojoValidator.addTester(new DefaultValuesNullTester());
+        pojoValidator.addTester(new SetterTester());
+        pojoValidator.addTester(new GetterTester());
+    }
 
-	@Test
-	public void testPojoStructureAndBehavior() {
-		// for (PojoClass pojoClass : pojoClasses) {
-		// System.out.println(pojoClass);
-		// pojoValidator.runValidation(pojoClass);
-		// }
-	}
+    @Test
+    public void testPojoStructureAndBehavior() {
+        // for (PojoClass pojoClass : pojoClasses) {
+        // System.out.println(pojoClass);
+        // pojoValidator.runValidation(pojoClass);
+        // }
+    }
 
 }

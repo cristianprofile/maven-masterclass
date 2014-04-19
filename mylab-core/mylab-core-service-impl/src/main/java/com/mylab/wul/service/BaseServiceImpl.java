@@ -19,46 +19,46 @@ import com.mylab.wul.repository.BaseRepository;
 @Transactional
 public class BaseServiceImpl implements BaseService {
 
-	private final Logger logger = LoggerFactory.getLogger(this.getClass());
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	@Autowired
-	BaseRepository baseRepository;
+    @Autowired
+    BaseRepository baseRepository;
 
-	@Override
-	public void deleteBase(BaseRequest base) throws BaseNotFoundException {
-		this.logger.debug("Begin operation: deleteBase, request:{} ", base);
+    @Override
+    public void deleteBase(BaseRequest base) throws BaseNotFoundException {
+        this.logger.debug("Begin operation: deleteBase, request:{} ", base);
 
-		List<Base> findByNameContaining = baseRepository.findByName(base.getName());
-		if (findByNameContaining.isEmpty())
-		{
-			throw new BaseNotFoundException("No se ha encontrado ninguna base con ese nombre");
-		}
-		baseRepository.delete(findByNameContaining.get(0).getId());
+        List<Base> findByNameContaining = baseRepository.findByName(base.getName());
+        if (findByNameContaining.isEmpty())
+        {
+            throw new BaseNotFoundException("No se ha encontrado ninguna base con ese nombre");
+        }
+        baseRepository.delete(findByNameContaining.get(0).getId());
 
-		this.logger.debug("End operation: deleteBase ");
-	}
+        this.logger.debug("End operation: deleteBase ");
+    }
 
-	@Override
-	public List<BaseResponse> findAllBases() {
-		this.logger.debug("Begin operation: findAllBases ");
-		List<BaseResponse> listBases = new ArrayList<BaseResponse>();
-		List<Base> findAll = baseRepository.findAll();
-		for (Base base : findAll) {
-			BaseResponse baseResponse = new BaseResponse();
-			baseResponse.setName(base.getName());
-			listBases.add(baseResponse);
-		}
-		this.logger.debug("End operation: findAllBases {} ", listBases);
-		return listBases;
-	}
+    @Override
+    public List<BaseResponse> findAllBases() {
+        this.logger.debug("Begin operation: findAllBases ");
+        List<BaseResponse> listBases = new ArrayList<BaseResponse>();
+        List<Base> findAll = baseRepository.findAll();
+        for (Base base : findAll) {
+            BaseResponse baseResponse = new BaseResponse();
+            baseResponse.setName(base.getName());
+            listBases.add(baseResponse);
+        }
+        this.logger.debug("End operation: findAllBases {} ", listBases);
+        return listBases;
+    }
 
-	@Override
-	public void saveBase(BaseRequest base) {
-		this.logger.debug("Begin operation: save request:{} ", base);
-		Base baseAlmacenar = new Base();
-		baseAlmacenar.setName(base.getName());
-		baseRepository.save(baseAlmacenar);
-		this.logger.debug("End operation: save request:{} ", base);
-	}
+    @Override
+    public void saveBase(BaseRequest base) {
+        this.logger.debug("Begin operation: save request:{} ", base);
+        Base baseAlmacenar = new Base();
+        baseAlmacenar.setName(base.getName());
+        baseRepository.save(baseAlmacenar);
+        this.logger.debug("End operation: save request:{} ", base);
+    }
 
 }

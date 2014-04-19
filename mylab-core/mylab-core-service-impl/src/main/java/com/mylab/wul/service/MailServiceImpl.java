@@ -12,19 +12,19 @@ import com.mylab.wul.dto.MailRequest;
 @Service
 public class MailServiceImpl implements MailService {
 
-	private final Logger logger = LoggerFactory.getLogger(this.getClass());
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	@Autowired
-	private MailSender mailSender;
+    @Autowired
+    private MailSender mailSender;
 
-	@Override
-	public void sendMail(MailRequest mailrequest) {
-		this.logger.debug("Begin operation: sending mail, request:{} ", mailrequest);
-		SimpleMailMessage message = new SimpleMailMessage();
-		message.setTo(mailrequest.getTo());
-		message.setSubject(mailrequest.getSubject());
-		message.setText(mailrequest.getBody());
-		mailSender.send(message);
-		this.logger.debug("End operation: sending mail, request:{} ", mailrequest);
-	}
+    @Override
+    public void sendMail(MailRequest mailrequest) {
+        this.logger.debug("Begin operation: sending mail, request:{} ", mailrequest);
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setTo(mailrequest.getTo());
+        message.setSubject(mailrequest.getSubject());
+        message.setText(mailrequest.getBody());
+        mailSender.send(message);
+        this.logger.debug("End operation: sending mail, request:{} ", mailrequest);
+    }
 }

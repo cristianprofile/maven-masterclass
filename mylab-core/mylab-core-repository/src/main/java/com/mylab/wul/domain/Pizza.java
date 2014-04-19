@@ -22,89 +22,89 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 @Entity
 public class Pizza {
 
-	@NotNull
-	@Size(min = 2)
-	private String name;
+    @NotNull
+    @Size(min = 2)
+    private String name;
 
-	private Float price;
+    private Float price;
 
-	@OneToOne
-	private Especialidad especialidad;
+    @OneToOne
+    private Especialidad especialidad;
 
-	@ManyToOne
-	private Base base;
+    @ManyToOne
+    private Base base;
 
-	@ManyToMany(cascade = CascadeType.ALL)
-	private Set<Topping> toppings = new HashSet<Topping>();
+    @ManyToMany(cascade = CascadeType.ALL)
+    private Set<Topping> toppings = new HashSet<Topping>();
 
-	public String getName() {
-		return this.name;
-	}
+    public String getName() {
+        return this.name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public Float getPrice() {
-		return this.price;
-	}
+    public Float getPrice() {
+        return this.price;
+    }
 
-	public void setPrice(Float price) {
-		this.price = price;
-	}
+    public void setPrice(Float price) {
+        this.price = price;
+    }
 
-	public Especialidad getEspecialidad() {
-		return this.especialidad;
-	}
+    public Especialidad getEspecialidad() {
+        return this.especialidad;
+    }
 
-	public void setEspecialidad(Especialidad especialidad) {
-		this.especialidad = especialidad;
-	}
+    public void setEspecialidad(Especialidad especialidad) {
+        this.especialidad = especialidad;
+    }
 
-	public Base getBase() {
-		return this.base;
-	}
+    public Base getBase() {
+        return this.base;
+    }
 
-	public void setBase(Base base) {
-		this.base = base;
-	}
+    public void setBase(Base base) {
+        this.base = base;
+    }
 
-	public Set<Topping> getToppings() {
-		return this.toppings;
-	}
+    public Set<Topping> getToppings() {
+        return this.toppings;
+    }
 
-	public void setToppings(Set<Topping> toppings) {
-		this.toppings = toppings;
-	}
+    public void setToppings(Set<Topping> toppings) {
+        this.toppings = toppings;
+    }
 
-	@Override
-	public String toString() {
-		return ReflectionToStringBuilder.toString(this,
-		        ToStringStyle.SHORT_PREFIX_STYLE);
-	}
+    @Override
+    public String toString() {
+        return ReflectionToStringBuilder.toString(this,
+                ToStringStyle.SHORT_PREFIX_STYLE);
+    }
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id")
-	private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    private Long id;
 
-	@Version
-	@Column(name = "version")
-	private Integer version;
+    @Version
+    @Column(name = "version")
+    private Integer version;
 
-	public Long getId() {
-		return this.id;
-	}
+    public Long getId() {
+        return this.id;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public Integer getVersion() {
-		return this.version;
-	}
+    public Integer getVersion() {
+        return this.version;
+    }
 
-	public void setVersion(Integer version) {
-		this.version = version;
-	}
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
 }
