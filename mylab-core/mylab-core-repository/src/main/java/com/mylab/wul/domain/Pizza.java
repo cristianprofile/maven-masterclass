@@ -80,7 +80,7 @@ public class Pizza {
 	@Override
 	public String toString() {
 		return ReflectionToStringBuilder.toString(this,
-				ToStringStyle.SHORT_PREFIX_STYLE);
+		        ToStringStyle.SHORT_PREFIX_STYLE);
 	}
 
 	@Id

@@ -15,30 +15,28 @@ import com.mylab.wul.dto.BaseResponse;
 import com.mylab.wul.exception.BaseNotFoundException;
 import com.mylab.wul.repository.BaseRepository;
 
-
 @Service
 @Transactional
 public class BaseServiceImpl implements BaseService {
-	
+
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
-    BaseRepository baseRepository;
-
+	BaseRepository baseRepository;
 
 	@Override
-	public void deleteBase(BaseRequest base) throws BaseNotFoundException{
+	public void deleteBase(BaseRequest base) throws BaseNotFoundException {
 		this.logger.debug("Begin operation: deleteBase, request:{} ", base);
-		
+
 		List<Base> findByNameContaining = baseRepository.findByName(base.getName());
 		if (findByNameContaining.isEmpty())
 		{
 			throw new BaseNotFoundException("No se ha encontrado ninguna base con ese nombre");
 		}
-        baseRepository.delete(findByNameContaining.get(0).getId());
-        
-        this.logger.debug("End operation: deleteBase ");
-    }
+		baseRepository.delete(findByNameContaining.get(0).getId());
+
+		this.logger.debug("End operation: deleteBase ");
+	}
 
 	@Override
 	public List<BaseResponse> findAllBases() {
@@ -50,18 +48,17 @@ public class BaseServiceImpl implements BaseService {
 			baseResponse.setName(base.getName());
 			listBases.add(baseResponse);
 		}
-		this.logger.debug("End operation: findAllBases {} ",listBases);
-        return listBases;
-    }
+		this.logger.debug("End operation: findAllBases {} ", listBases);
+		return listBases;
+	}
 
 	@Override
 	public void saveBase(BaseRequest base) {
 		this.logger.debug("Begin operation: save request:{} ", base);
 		Base baseAlmacenar = new Base();
 		baseAlmacenar.setName(base.getName());
-        baseRepository.save(baseAlmacenar);
-        this.logger.debug("End operation: save request:{} ", base);
-    }
-
+		baseRepository.save(baseAlmacenar);
+		this.logger.debug("End operation: save request:{} ", base);
+	}
 
 }

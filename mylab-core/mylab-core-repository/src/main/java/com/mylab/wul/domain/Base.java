@@ -55,7 +55,7 @@ public class Base {
 	@Override
 	public String toString() {
 		return ReflectionToStringBuilder.toString(this,
-				ToStringStyle.SHORT_PREFIX_STYLE);
+		        ToStringStyle.SHORT_PREFIX_STYLE);
 	}
 
 	public String getName() {

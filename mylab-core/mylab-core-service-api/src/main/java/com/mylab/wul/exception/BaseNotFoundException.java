@@ -22,7 +22,5 @@ public class BaseNotFoundException extends ServiceException {
 	public BaseNotFoundException(Throwable cause) {
 		super(cause);
 	}
-	
-	
 
 }

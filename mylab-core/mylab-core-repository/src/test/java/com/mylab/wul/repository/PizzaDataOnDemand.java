@@ -77,11 +77,11 @@ public class PizzaDataOnDemand {
 		int from = 0;
 		int to = 10;
 		data = pizzaRepository.findAll(
-				new org.springframework.data.domain.PageRequest(from / to, to))
-				.getContent();
+		        new org.springframework.data.domain.PageRequest(from / to, to))
+		        .getContent();
 		if (data == null) {
 			throw new IllegalStateException(
-					"Find entries implementation for 'Pizza' illegally returned null");
+			        "Find entries implementation for 'Pizza' illegally returned null");
 		}
 		if (!data.isEmpty()) {
 			return;
@@ -95,15 +95,15 @@ public class PizzaDataOnDemand {
 			} catch (final ConstraintViolationException e) {
 				final StringBuilder msg = new StringBuilder();
 				for (Iterator<ConstraintViolation<?>> iter = e
-						.getConstraintViolations().iterator(); iter.hasNext();) {
+				        .getConstraintViolations().iterator(); iter.hasNext();) {
 					final ConstraintViolation<?> cv = iter.next();
 					msg.append("[")
-							.append(cv.getRootBean().getClass().getName())
-							.append(".").append(cv.getPropertyPath())
-							.append(": ").append(cv.getMessage())
-							.append(" (invalid value = ")
-							.append(cv.getInvalidValue()).append(")")
-							.append("]");
+					        .append(cv.getRootBean().getClass().getName())
+					        .append(".").append(cv.getPropertyPath())
+					        .append(": ").append(cv.getMessage())
+					        .append(" (invalid value = ")
+					        .append(cv.getInvalidValue()).append(")")
+					        .append("]");
 				}
 				throw new IllegalStateException(msg.toString(), e);
 			}

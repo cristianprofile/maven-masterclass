@@ -7,17 +7,17 @@ import com.openpojo.reflection.PojoClass;
 import com.openpojo.reflection.PojoClassFilter;
 
 public class ExclusionListFilter implements PojoClassFilter {
-    private final List<Class> exclusionList = new ArrayList<Class>();
+	private final List<Class> exclusionList = new ArrayList<Class>();
 
-    public ExclusionListFilter(final Class[] classes) {
-        for (Class clazz : classes) {
-            this.exclusionList.add(clazz);
-        }
-    }
+	public ExclusionListFilter(final Class[] classes) {
+		for (Class clazz : classes) {
+			this.exclusionList.add(clazz);
+		}
+	}
 
-    @Override
-    public boolean include(PojoClass pojoClass) {
-        return !this.exclusionList.contains(pojoClass.getClazz());
-    }
+	@Override
+	public boolean include(PojoClass pojoClass) {
+		return !this.exclusionList.contains(pojoClass.getClazz());
+	}
 
 }

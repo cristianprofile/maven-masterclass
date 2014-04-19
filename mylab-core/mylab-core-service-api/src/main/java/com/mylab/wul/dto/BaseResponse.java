@@ -1,7 +1,7 @@
 package com.mylab.wul.dto;
 
 public class BaseResponse {
-	
+
 	private String name;
 
 	public String getName() {
@@ -20,7 +20,5 @@ public class BaseResponse {
 		builder.append("]");
 		return builder.toString();
 	}
-	
-	
 
 }

@@ -45,7 +45,7 @@ public class MailServiceImplTest {
 		Assert.assertEquals(messages.size(), 1);
 		Assert.assertNotNull(messages.get(0).getMimeMessage());
 		Assert.assertTrue(messages.get(0).getMimeMessage().getSubject()
-				.equalsIgnoreCase("mi primero correo de palo"));
+		        .equalsIgnoreCase("mi primero correo de palo"));
 
 	}
 

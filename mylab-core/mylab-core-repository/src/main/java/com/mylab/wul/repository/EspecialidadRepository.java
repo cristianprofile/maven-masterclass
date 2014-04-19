@@ -7,5 +7,5 @@ import com.mylab.wul.domain.Especialidad;
 
 @Repository
 public interface EspecialidadRepository extends
-		JpaRepository<Especialidad, Long> {
+        JpaRepository<Especialidad, Long> {
 }

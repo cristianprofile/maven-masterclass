@@ -19,12 +19,12 @@ public class MailServiceImpl implements MailService {
 
 	@Override
 	public void sendMail(MailRequest mailrequest) {
-		this.logger.debug("Begin operation: sending mail, request:{} ",mailrequest);
+		this.logger.debug("Begin operation: sending mail, request:{} ", mailrequest);
 		SimpleMailMessage message = new SimpleMailMessage();
 		message.setTo(mailrequest.getTo());
 		message.setSubject(mailrequest.getSubject());
 		message.setText(mailrequest.getBody());
 		mailSender.send(message);
-		this.logger.debug("End operation: sending mail, request:{} ",mailrequest);
+		this.logger.debug("End operation: sending mail, request:{} ", mailrequest);
 	}
 }

@@ -1,7 +1,7 @@
 package com.mylab.wul.dto;
 
 public class BaseRequest {
-	
+
 	private String name;
 
 	public String getName() {
@@ -20,9 +20,5 @@ public class BaseRequest {
 		builder.append("]");
 		return builder.toString();
 	}
-
-	
-	
-	
 
 }
