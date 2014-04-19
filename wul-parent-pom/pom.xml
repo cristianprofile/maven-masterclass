@@ -364,6 +364,7 @@
 					<artifactId>cobertura-maven-plugin</artifactId>
 					<version>2.6</version>
 					<configuration>
+						<aggregate>true</aggregate>
 						<argLine>-XX:-UseSplitVerifier</argLine>
 						<formats>
 								<format>html</format>
