@@ -19,6 +19,7 @@ import com.openpojo.validation.rule.impl.NoStaticExceptFinalRule;
 import com.openpojo.validation.test.impl.DefaultValuesNullTester;
 import com.openpojo.validation.test.impl.GetterTester;
 import com.openpojo.validation.test.impl.SetterTester;
+import com.openpojo.validation.utils.ValidationHelper;
 
 public class DtoTest {
 
@@ -54,8 +55,9 @@ public class DtoTest {
     @Test
     public void testPojoStructureAndBehavior() {
          for (PojoClass pojoClass : pojoClasses) {
-         System.out.println(pojoClass);
          pojoValidator.runValidation(pojoClass);
+         ValidationHelper.getBasicInstance(pojoClass).toString();
+         ValidationHelper.getMostCompleteInstance(pojoClass).toString();
          }
     }
 
