@@ -24,7 +24,7 @@ public class BaseServiceImpl implements BaseService {
     @Autowired
     BaseRepository baseRepository;
     
-    /*
+    /*comment
      * (non-Javadoc)
      * @see com.mylab.wul.service.BaseService#deleteBase(com.mylab.wul.dto.BaseRequest)
      */
