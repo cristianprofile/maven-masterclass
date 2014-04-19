@@ -23,6 +23,7 @@ public class BaseServiceImpl implements BaseService {
 
     @Autowired
     BaseRepository baseRepository;
+    
 
     @Override
     public void deleteBase(BaseRequest base) throws BaseNotFoundException {
