@@ -3,7 +3,7 @@
   <parent>
     <groupId>com.mylab.wul.core</groupId>
     <artifactId>mylab-core</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2-SNAPSHOT</version>
   </parent>
   <artifactId>mylab-core-service-api</artifactId>
   <name>mylab-core-service-api</name>

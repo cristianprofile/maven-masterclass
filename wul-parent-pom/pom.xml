@@ -28,7 +28,7 @@
 		<jaxb.api.version>2.2.11</jaxb.api.version>
 		<jetty.version>9.1.1.v20140108</jetty.version>
 		<junit.version>4.11</junit.version>
-		<openpojo.version>0.4.8</openpojo.version>
+		<openpojo.version>0.5.0</openpojo.version>
 		<slf4j.version>1.7.5</slf4j.version>
 		<spring-data-commons.version>1.6.3.RELEASE</spring-data-commons.version>
 		<spring.data.version>1.4.3.RELEASE</spring.data.version>

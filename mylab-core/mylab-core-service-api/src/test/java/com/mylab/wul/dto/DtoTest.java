@@ -53,10 +53,10 @@ public class DtoTest {
 
     @Test
     public void testPojoStructureAndBehavior() {
-        // for (PojoClass pojoClass : pojoClasses) {
-        // System.out.println(pojoClass);
-        // pojoValidator.runValidation(pojoClass);
-        // }
+         for (PojoClass pojoClass : pojoClasses) {
+         System.out.println(pojoClass);
+         pojoValidator.runValidation(pojoClass);
+         }
     }
 
 }
