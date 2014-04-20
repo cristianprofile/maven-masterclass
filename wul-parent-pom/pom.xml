@@ -11,24 +11,24 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.7</java.version>
-		<aspectj.version>1.7.4</aspectj.version>
+		<aspectj.version>1.8.0</aspectj.version>
 		<commons.dbcp.version>1.4</commons.dbcp.version>
-		<commons.lang3.version>3.2.1</commons.lang3.version>
+		<commons.lang3.version>3.3.2</commons.lang3.version>
 		<commons.pool.version>1.6</commons.pool.version>
-		<hibernate.version>4.2.0.Final</hibernate.version>
+		<hibernate.version>4.3.5.Final</hibernate.version>
 		<hibernate-jpa-api.version>1.0.1.Final</hibernate-jpa-api.version>
-		<hibernate-validator.version>5.0.1.Final</hibernate-validator.version>
-		<hsqldb.version>2.3.1</hsqldb.version>
+		<hibernate-validator.version>5.1.0.Final</hibernate-validator.version>
+		<hsqldb.version>2.3.2</hsqldb.version>
 		<jackson-mapper-asl.version>1.9.12</jackson-mapper-asl.version>
-		<jackson-core.version>2.3.1</jackson-core.version>
+		<jackson-core.version>2.3.3</jackson-core.version>
 		<jackson-databind.version>2.3.1</jackson-databind.version>
 		<javax.annotation.version>1.0</javax.annotation.version>
 		<javax.servlet.version>2.5</javax.servlet.version>
 		<jaxb.api.version>2.2.11</jaxb.api.version>
-		<jetty.version>9.1.1.v20140108</jetty.version>
+		<jetty.version>9.2.0.M0</jetty.version>
 		<junit.version>4.11</junit.version>
 		<openpojo.version>0.5.0</openpojo.version>
-		<slf4j.version>1.7.5</slf4j.version>
+		<slf4j.version>1.7.7</slf4j.version>
 		<spring-data-commons.version>1.7.2.RELEASE</spring-data-commons.version>
 		<spring.data.version>1.5.2.RELEASE</spring.data.version>
 		<spring.version>4.0.3.RELEASE</spring.version>
