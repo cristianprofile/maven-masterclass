@@ -10,5 +10,5 @@ Multi-module maven project example using SPRING 3
 
 You can access to video course at url below:
 
-<p>Cristian Romero Matesanz WUL4 #Training Thursday3 - Maven   <a href="https://www.youtube.com/watch?v=kUxSyVCLcQI" title="Title">
-Video Course</a>.</p>
+
+Cristian Romero Matesanz WUL4 #Training Thursday3 - Maven [Video Course](https://www.youtube.com/watch?v=kUxSyVCLcQI "Title")
