@@ -1,4 +1,4 @@
-mylab example maven application withe spring 3
+Mylab example maven application withe spring 3
 ==============
 
 Multi-module maven project example using SPRING 3
