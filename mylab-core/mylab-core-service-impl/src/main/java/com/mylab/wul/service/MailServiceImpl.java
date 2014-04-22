@@ -29,7 +29,7 @@ public class MailServiceImpl implements MailService {
     private MailSender mailSender;
 
     @Override
-    public void sendMail(MailRequest mailrequest) {
+    public void sendMail(final MailRequest mailrequest) {
         this.logger.debug("Begin operation: sending mail, request:{} ", mailrequest);
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(mailrequest.getTo());

@@ -24,7 +24,7 @@ public interface BaseService {
      * @param base base to delete
      * @throws BaseNotFoundException
      */
-    public abstract void deleteBase(BaseRequest base) throws BaseNotFoundException;
+    public abstract void deleteBase(final BaseRequest base) throws BaseNotFoundException;
 
     /**
      * list all base of pizza from repository
@@ -36,6 +36,6 @@ public interface BaseService {
      * save a base of pizza from repository
      * @param base base to save
      */
-    public abstract void saveBase(BaseRequest base);
+    public abstract void saveBase(final BaseRequest base);
 
 }

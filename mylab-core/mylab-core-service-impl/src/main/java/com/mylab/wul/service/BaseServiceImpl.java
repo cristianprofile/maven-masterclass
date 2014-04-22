@@ -38,7 +38,7 @@ public class BaseServiceImpl implements BaseService {
     
     
     @Override
-    public void deleteBase(BaseRequest base) throws BaseNotFoundException {
+    public void deleteBase(final BaseRequest base) throws BaseNotFoundException {
         this.logger.debug("Begin operation: deleteBase, request:{} ", base);
 
         List<Base> findByNameContaining = baseRepository.findByName(base.getName());
@@ -66,7 +66,7 @@ public class BaseServiceImpl implements BaseService {
     }
 
     @Override
-    public void saveBase(BaseRequest base) {
+    public void saveBase(final BaseRequest base) {
         this.logger.debug("Begin operation: save request:{} ", base);
         Base baseAlmacenar = new Base();
         baseAlmacenar.setName(base.getName());
