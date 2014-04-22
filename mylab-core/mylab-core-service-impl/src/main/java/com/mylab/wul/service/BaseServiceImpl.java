@@ -22,7 +22,7 @@ public class BaseServiceImpl implements BaseService {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
-    BaseRepository baseRepository;
+    private BaseRepository baseRepository;
     
     
     @Override
