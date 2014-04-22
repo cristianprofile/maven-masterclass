@@ -1,5 +1,15 @@
 package com.mylab.wul.dto;
-
+/**
+* <h1>BaseRequest</h1>
+* BaseRequest dto request 
+* <p>
+* <b>BaseRequest</b> BaseRequest data transfer object 
+* for sevice layer
+*
+* @author  Cristian Romero Matesanz
+*
+* 
+*/
 public class BaseRequest {
 
     private String name;
