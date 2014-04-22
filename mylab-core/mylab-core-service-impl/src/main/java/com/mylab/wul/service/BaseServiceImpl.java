@@ -15,6 +15,18 @@ import com.mylab.wul.dto.BaseResponse;
 import com.mylab.wul.exception.BaseNotFoundException;
 import com.mylab.wul.repository.BaseRepository;
 
+/**
+* <h1>Base Service Implement!</h1>
+* Bussiness Service example using repository access. 
+* <p>
+* <b>Base</b> Access to Base Pizza Example model object using
+* repositories with spring data jpa
+*
+* @author  Cristian Romero Matesanz
+*
+* 
+*/
+
 @Service
 @Transactional
 public class BaseServiceImpl implements BaseService {
