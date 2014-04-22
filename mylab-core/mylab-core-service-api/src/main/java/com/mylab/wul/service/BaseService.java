@@ -6,6 +6,17 @@ import com.mylab.wul.dto.BaseRequest;
 import com.mylab.wul.dto.BaseResponse;
 import com.mylab.wul.exception.BaseNotFoundException;
 
+/**
+* <h1>BaseService</h1>
+* BaseService interface definition 
+* <p>
+* <b>BaseService</b> definition of methods of interface
+* for sevice layer
+*
+* @author  Cristian Romero Matesanz
+*
+* 
+*/
 public interface BaseService {
 
     /**
