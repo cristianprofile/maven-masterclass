@@ -1,5 +1,16 @@
 package com.mylab.wul.exception;
 
+/**
+* <h1>ServiceException</h1>
+* ServiceException exception service layer 
+* <p>
+* <b>ServiceException</b> custom abstract service exception
+* for sevice layer
+*
+* @author  Cristian Romero Matesanz
+*
+* 
+*/
 public abstract class ServiceException extends RuntimeException {
 
     /**
