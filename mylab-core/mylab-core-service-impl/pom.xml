@@ -10,6 +10,7 @@
 	<name>service-impl</name>
 	<description>service implementation</description>
 	<dependencies>
+	
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
