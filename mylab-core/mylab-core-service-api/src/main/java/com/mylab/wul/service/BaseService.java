@@ -24,18 +24,18 @@ public interface BaseService {
      * @param base base to delete
      * @throws BaseNotFoundException
      */
-    public void deleteBase(final BaseRequest base) throws BaseNotFoundException;
+    void deleteBase(final BaseRequest base) throws BaseNotFoundException;
 
     /**
      * list all base of pizza from repository
      * @return
      */
-    public List<BaseResponse> findAllBases();
+    List<BaseResponse> findAllBases();
 
     /**
      * save a base of pizza from repository
      * @param base base to save
      */
-    public void saveBase(final BaseRequest base);
+    void saveBase(final BaseRequest base);
 
 }

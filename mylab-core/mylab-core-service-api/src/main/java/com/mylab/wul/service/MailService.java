@@ -19,6 +19,6 @@ public interface MailService {
      * Method to send an email whith information request
      * @param mailrequest mail request to send by email protocol
      */
-    public void sendMail(final MailRequest mailrequest);
+     void sendMail(final MailRequest mailrequest);
 
 }
