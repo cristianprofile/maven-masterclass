@@ -7,7 +7,6 @@
 	<packaging>pom</packaging>
 	<name>wul4-parent-pom</name>
 	<description>parentpom</description>
-	
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
