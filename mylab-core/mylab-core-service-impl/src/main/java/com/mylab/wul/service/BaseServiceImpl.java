@@ -42,8 +42,7 @@ public class BaseServiceImpl implements BaseService {
         this.logger.debug("Begin operation: deleteBase, request:{} ", base);
 
         List<Base> findByNameContaining = baseRepository.findByName(base.getName());
-        if (findByNameContaining.isEmpty())
-        {
+        if (findByNameContaining.isEmpty()){
             throw new BaseNotFoundException("No se ha encontrado ninguna base con ese nombre");
         }
         baseRepository.delete(findByNameContaining.get(0).getId());
@@ -67,6 +66,9 @@ public class BaseServiceImpl implements BaseService {
 
     @Override
     public void saveBase(final BaseRequest base) {
+        String x="asdadsad";
+        x=x+"adsadcdsfsfsdf";
+        x=x+"asdadrwerw";
         this.logger.debug("Begin operation: save request:{} ", base);
         Base baseAlmacenar = new Base();
         baseAlmacenar.setName(base.getName());
