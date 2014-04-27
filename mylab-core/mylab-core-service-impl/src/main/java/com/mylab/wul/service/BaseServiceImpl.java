@@ -66,9 +66,6 @@ public class BaseServiceImpl implements BaseService {
 
     @Override
     public void saveBase(final BaseRequest base) {
-        String x="asdadsad";
-        x=x+"adsadcdsfsfsdf";
-        x=x+"asdadrwerw";
         this.logger.debug("Begin operation: save request:{} ", base);
         Base baseAlmacenar = new Base();
         baseAlmacenar.setName(base.getName());
