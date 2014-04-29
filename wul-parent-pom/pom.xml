@@ -25,6 +25,7 @@
 		<jackson-databind.version>2.3.1</jackson-databind.version>
 		<javax.annotation.version>1.0</javax.annotation.version>
 		<javax.servlet.version>2.5</javax.servlet.version>
+		<javax.mail.version>1.4</javax.mail.version>
 		<jaxb.api.version>2.2.11</jaxb.api.version>
 		<jetty.version>9.2.0.M0</jetty.version>
 		<junit.version>4.11</junit.version>
@@ -44,7 +45,11 @@
 
 	<dependencyManagement>
 		<dependencies>
-
+			<dependency>
+				<groupId>javax.mail</groupId>
+				<artifactId>mail</artifactId>
+				<version>${javax.mail.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>org.apache.commons</groupId>
 				<artifactId>commons-lang3</artifactId>

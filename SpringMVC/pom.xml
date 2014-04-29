@@ -50,13 +50,6 @@
 		</dependency>
 		
 		<dependency>
-			<groupId>javax.mail</groupId>
-			<artifactId>mail</artifactId>
-			<version>1.4</version>
-		</dependency>
-            
-
-		<dependency>
 			<groupId>com.mylab.wul.core</groupId>
 			<artifactId>mylab-core-service-impl</artifactId>
 			<version>0.0.2-SNAPSHOT</version>
