@@ -160,6 +160,17 @@
 					</webAppConfig>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>net.wasdev.wlp.maven.plugins</groupId>
+				<artifactId>liberty-maven-plugin</artifactId>
+				<configuration>
+					<installDirectory>/Users/mariano/wlp</installDirectory>
+					<bootstrapProperties>
+						<httpPort>8080</httpPort>
+					</bootstrapProperties>
+					<appArchive>/Users/mariano/git/training-thursday-3-maven-nuevorepo/SpringMVC/target/SpringMVC-1.0-SNAPSHOT.war</appArchive> 
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
