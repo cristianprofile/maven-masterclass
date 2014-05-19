@@ -169,6 +169,7 @@
 						<httpPort>8080</httpPort>
 					</bootstrapProperties>
 					<appArchive>/Users/mariano/git/training-thursday-3-maven-nuevorepo/SpringMVC/target/SpringMVC-1.0-SNAPSHOT.war</appArchive> 
+					<refresh>true</refresh>
 				</configuration>
 			</plugin>
 		</plugins>
