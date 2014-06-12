@@ -42,7 +42,7 @@
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
 		id="entityManagerFactory">
 		<property name="dataSource" ref="dataSource" />
-		<property name="packagesToScan" value="com.mylab.wul.domain" />
+		<property name="packagesToScan" value="com.mylab.cromero.domain" />
 		<property name="jpaVendorAdapter">
 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
 				<property name="showSql" value="${database.showSql}"></property>

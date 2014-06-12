@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.mylab.wul.core</groupId>
+		<groupId>com.mylab.cromero.core</groupId>
 		<artifactId>mylab-core</artifactId>
 		<version>0.0.2-SNAPSHOT</version>
 	</parent>
@@ -88,12 +88,12 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.mylab.wul.core</groupId>
+			<groupId>com.mylab.cromero.core</groupId>
 			<artifactId>mylab-core-repository</artifactId>
 			<version>0.0.2-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>com.mylab.wul.core</groupId>
+			<groupId>com.mylab.cromero.core</groupId>
 			<artifactId>mylab-core-service-api</artifactId>
 			<version>0.0.2-SNAPSHOT</version>
 		</dependency>

@@ -13,7 +13,7 @@
     <context:property-placeholder location="classpath:database.properties" />
     
     
-	<context:component-scan base-package="com.mylab.wul.web.controller" />
+	<context:component-scan base-package="com.mylab.cromero.web.controller" />
 
 
 </beans>

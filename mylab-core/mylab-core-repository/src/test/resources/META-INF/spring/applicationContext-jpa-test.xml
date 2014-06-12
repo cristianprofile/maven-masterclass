@@ -9,7 +9,7 @@
 
     <import resource="classpath:/META-INF/spring/applicationContext-repository.xml" />
 
-    <context:component-scan base-package="com.mylab.wul.repository"/>
+    <context:component-scan base-package="com.mylab.cromero.repository"/>
   
     <context:property-placeholder location="classpath:database.properties" />
 
