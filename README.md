@@ -8,7 +8,8 @@ Multi-module maven project example using SPRING 3
 - Repository access with spring data jpa
 - unitary and integration test concept
 
-You can access to video course at url below:
+You can access to video course an ppt of presentation at url below:
 
+Cristian Romero Matesanz WUL4 #Training Thursday3 - Maven Presentation [Video Course]http://www.slideshare.net/cristianromeromatesanz/maven-31576343 "Cristian Romero Matesanz WUL4 #Training Thursday3 - Maven")
 
 Cristian Romero Matesanz WUL4 #Training Thursday3 - Maven [Video Course](https://www.youtube.com/watch?v=kUxSyVCLcQI "Cristian Romero Matesanz WUL4 #Training Thursday3 - Maven")
