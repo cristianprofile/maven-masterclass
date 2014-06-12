@@ -27,7 +27,7 @@ public class HelloController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String printWelcome(ModelMap model) {
-		System.out.println("pasaaaaa");
+	
 		BaseRequest base = new BaseRequest();
 		base.setName("margarita3333");
 		baseService.saveBase(base);
