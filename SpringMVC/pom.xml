@@ -9,7 +9,7 @@
 	<artifactId>spring-mvc</artifactId>
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
-	<name>SpringMVC Maven Webapp</name>
+	<name>SpringMVC</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 
