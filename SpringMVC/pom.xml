@@ -6,7 +6,7 @@
 		<artifactId>cromero-parent-pom</artifactId>
 		<version>0.0.2-SNAPSHOT</version>
 	</parent>
-	<artifactId>SpringMVC</artifactId>
+	<artifactId>spring-mvc</artifactId>
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
 	<name>SpringMVC Maven Webapp</name>
