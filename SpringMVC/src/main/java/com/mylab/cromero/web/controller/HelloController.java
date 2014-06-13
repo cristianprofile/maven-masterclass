@@ -29,7 +29,7 @@ public class HelloController {
 	public String printWelcome(ModelMap model) {
 	
 		BaseRequest base = new BaseRequest();
-		base.setName("margarita3333");
+		base.setName("rolling pizza");
 		baseService.saveBase(base);
 		base = new BaseRequest();
 		base.setName("masa-pan");
