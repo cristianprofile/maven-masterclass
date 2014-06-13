@@ -19,13 +19,14 @@ import com.mylab.cromero.service.BaseService;
 import flexjson.*;
 
 @Controller
-@RequestMapping("/welcome")
+@RequestMapping(value = "/")
 public class IndexController {
 
 	@Autowired
 	private BaseService baseService;
 
-	@RequestMapping(method = RequestMethod.GET)
+
+	@RequestMapping( method = RequestMethod.GET)
 	public String printWelcome(ModelMap model) {
 	
 		BaseRequest base = new BaseRequest();
