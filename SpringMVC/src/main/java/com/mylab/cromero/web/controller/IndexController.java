@@ -20,7 +20,7 @@ import flexjson.*;
 
 @Controller
 @RequestMapping("/welcome")
-public class HelloController {
+public class IndexController {
 
 	@Autowired
 	private BaseService baseService;
