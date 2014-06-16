@@ -1,10 +1,10 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html>
 <head>
-    <title>Spring 3 MVC Series - Contact Manager</title>
+    <title>Spring 3 MVC Series - Pizza example</title>
 </head>
 <body>
-<h2>Contact Manager</h2>
+<h2>Base Manager</h2>
 <form:form method="post" action="addBase" modelAttribute="base">
  
     <table>
