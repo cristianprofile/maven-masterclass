@@ -6,7 +6,7 @@
 
 <html>
 <body>
-	<h1>PIZZA BASESzzz</h1>
+	<h1>PIZZA BASESzzzwwwww</h1>
 		
 	<table border="1">
 		<c:if test="${! empty findAllBases}">
