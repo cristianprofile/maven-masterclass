@@ -1,4 +1,4 @@
-maven-maven-masterclass
+maven-masterclass
 =======================
 
 Multi-module maven project example using SPRING 3
