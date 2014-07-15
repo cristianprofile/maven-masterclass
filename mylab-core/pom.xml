@@ -18,6 +18,7 @@
   	<module>mylab-core-service-impl</module>
   </modules>
   
+  
   <build>
 		<plugins>
 			<plugin>
