@@ -19,5 +19,5 @@ public interface PizzaRepository extends JpaRepository<Pizza, Long> {
     List<Pizza> findByEspecialidadName(String name);
 
     List<Pizza> findByToppingsName(String name);
-   
+    
 }
