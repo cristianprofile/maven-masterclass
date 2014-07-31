@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/cristianprofile/maven-masterclass.png?label=ready&title=Ready)](https://waffle.io/cristianprofile/maven-masterclass)
 maven-masterclass
 =======================
 
