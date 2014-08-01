@@ -12,12 +12,12 @@
 	<name>SpringMVC</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
-
+		
 		<dependency>
-			<groupId>net.sf.flexjson</groupId>
-			<artifactId>flexjson</artifactId>
-			<version>2.0</version>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
 		</dependency>
+
 
 		<dependency>
 			<groupId>taglibs</groupId>
@@ -166,7 +166,7 @@
 					<bootstrapProperties>
 						<httpPort>8080</httpPort>
 					</bootstrapProperties>
-					<appArchive>/Users/mariano/git/training-thursday-3-maven-nuevorepo/SpringMVC/target/SpringMVC-1.0-SNAPSHOT.war</appArchive> 
+					<appArchive>/Users/mariano/git/training-thursday-3-maven-nuevorepo/SpringMVC/target/SpringMVC-1.0-SNAPSHOT.war</appArchive>
 					<refresh>true</refresh>
 				</configuration>
 			</plugin>
