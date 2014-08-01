@@ -1,36 +1,42 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 
 
 <html>
 <body>
-	<h1>PIZZA BASESzzzwwwww</h1>
-		
+	<h1>List of Bases</h1>
+
 	<table border="1">
+
+
+		<tr>
+			<td>Id</td>
+			<td>Name</td>
+		</tr>
+
 		<c:if test="${! empty findAllBases}">
 			<c:forEach var="base" items="${findAllBases}">
-			<tr>
-			    <td><c:out value="${base.name}"></c:out></td>
-			</tr>
-			<tr>
-			    <td><c:out value="${base.id}"></c:out></td>
-			</tr>
+				<tr>
+					<td><c:out value="${base.id}"></c:out></td>
+					<td><c:out value="${base.name}"></c:out></td>
+				</tr>
+
 			</c:forEach>
 		</c:if>
-		
+
 		<c:if test="${empty findAllBases}">
-		  <tr>
-			    <td><c:out value="EMPTY!!!"></c:out></td>
+			<tr>
+				<td><c:out value="EMPTY!!!"></c:out></td>
 			</tr>
 		</c:if>
 	</table>
 
 	<br>
 
-	
+
 	<a href="<c:url value="/addBase"/>">Add new base of pizza</a>
-	
+
 </body>
 </html>
