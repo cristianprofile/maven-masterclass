@@ -13,6 +13,7 @@ package com.mylab.cromero.dto;
 public class BaseRequest {
 
     private String name;
+    private Long id;
 
     public String getName() {
         return name;
@@ -21,14 +22,28 @@ public class BaseRequest {
     public void setName(String name) {
         this.name = name;
     }
+    
+    
 
-    @Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("BaseRequest [name=");
-        builder.append(name);
-        builder.append("]");
-        return builder.toString();
-    }
+    public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("BaseRequest [name=");
+		builder.append(name);
+		builder.append(", id=");
+		builder.append(id);
+		builder.append("]");
+		return builder.toString();
+	}
+
+	
 
 }

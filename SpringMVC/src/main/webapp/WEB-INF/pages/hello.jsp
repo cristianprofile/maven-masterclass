@@ -14,6 +14,9 @@
 			<tr>
 			    <td><c:out value="${base.name}"></c:out></td>
 			</tr>
+			<tr>
+			    <td><c:out value="${base.id}"></c:out></td>
+			</tr>
 			</c:forEach>
 		</c:if>
 		

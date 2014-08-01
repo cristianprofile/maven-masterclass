@@ -41,22 +41,6 @@ public class IndexController {
 
 	}
 
-	@RequestMapping(value = "/rest", method = RequestMethod.GET)
-	@ResponseBody
-	public List<BaseResponse> verIngredientes() {
-		BaseRequest base = new BaseRequest();
-		base.setName("margarita");
-		baseService.saveBase(base);
-		base = new BaseRequest();
-		base.setName("masa-pan");
-
-		baseService.saveBase(base);
-		List<BaseResponse> findAllBases = baseService.findAllBases();
-		HttpHeaders headers = new HttpHeaders();
-		headers.add("Content-Type", "application/json; charset=utf-8"); 
-		return findAllBases;
-
-	}
 
 
 

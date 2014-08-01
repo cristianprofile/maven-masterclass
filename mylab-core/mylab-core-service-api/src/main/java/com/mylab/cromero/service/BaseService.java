@@ -37,5 +37,25 @@ public interface BaseService {
      * @param base base to save
      */
     void saveBase(final BaseRequest base);
+    
+    /**
+     * get a base of pizza from repository
+     * @param id base to load
+     * @return 
+     */
+    BaseResponse getBase(final Long id) throws BaseNotFoundException;
+    
+    /**
+     * delete base by id value
+     * @param id
+     * @throws BaseNotFoundException
+     */
+    void deleteBase(Long id) throws BaseNotFoundException;
+
+    /**
+     * update base of pizza
+     * @param baseUpdate
+     */
+	void updateBase(BaseRequest baseUpdate);
 
 }
