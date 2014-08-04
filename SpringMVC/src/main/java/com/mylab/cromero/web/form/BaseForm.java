@@ -1,7 +1,12 @@
 package com.mylab.cromero.web.form;
 
-public class BaseForm {
+import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
+public class BaseForm {
+     @NotNull
+     @NotEmpty
 	 private String name;
 
 	public String getName() {
