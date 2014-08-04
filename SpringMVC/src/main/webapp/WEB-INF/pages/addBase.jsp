@@ -14,20 +14,25 @@
 <body>
 
 
-	<div class="container" style="padding-top: 1em;">
+	<div class="container" >
 		<h1>New Base view</h1>
 		<form:form method="post" action="addBase" modelAttribute="base"
-			role="form">
+			role="form" class="form-horizontal">
 			<div class="form-group">
 
 				<form:label for="name" path="name">Base</form:label>
-				<font color='red'><form:errors path='name' /></font>
-				<form:input class="form-control" path="name"
-					placeholder="Enter name" />
 
+
+				<form:input path="name" placeholder="Enter name" />
+				<font color='red'><form:errors path='name' /></font>
+				
+			</div>
+			
+			<div class="form-group">
+			<button type="submit" class="btn btn-success btn-large">Submit</button>
 			</div>
 
-			<button type="submit" class="btn btn-success btn-large">Submit</button>
+
 		</form:form>
 	</div>
 
