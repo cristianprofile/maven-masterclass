@@ -1,4 +1,7 @@
 package com.mylab.cromero.dto;
+
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
 * <h1>BaseResponse</h1>
 * BaseRequest dto request 
@@ -10,6 +13,7 @@ package com.mylab.cromero.dto;
 *
 * 
 */
+@XmlRootElement
 public class BaseResponse {
 
     private String name;
