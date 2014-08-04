@@ -23,8 +23,7 @@ If you want to access to Rest Service example api then you need to type this url
 You can access uploaded example:
 
 
-
-Cristian Romero Matesanz WUL4 #Training Thursday3 - Maven [http://cristian-romero-mvc-example.cristianprofile.cloudbees.net/](http://cristian-romero-mvc-example.cristianprofile.cloudbees.net/ "http://cristian-romero-mvc-example.cristianprofile.cloudbees.net/")
+ [http://cristian-romero-mvc-example.cristianprofile.cloudbees.net/](http://cristian-romero-mvc-example.cristianprofile.cloudbees.net/ "http://cristian-romero-mvc-example.cristianprofile.cloudbees.net/")
 
 You can access to video course an ppt of presentation at url below:
 
