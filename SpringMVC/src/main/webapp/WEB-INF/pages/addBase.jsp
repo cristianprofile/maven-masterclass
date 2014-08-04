@@ -15,13 +15,15 @@
 
 
 	<div class="container" style="padding-top: 1em;">
-	<h1>New Base view</h1>
+		<h1>New Base view</h1>
 		<form:form method="post" action="addBase" modelAttribute="base"
 			role="form">
 			<div class="form-group">
 
 				<form:label for="name" path="name">Base</form:label>
-				<form:input class="form-control" path="name"  placeholder="Enter name"/>
+				<font color='red'><form:errors path='name' /></font>
+				<form:input class="form-control" path="name"
+					placeholder="Enter name" />
 
 			</div>
 
