@@ -22,7 +22,7 @@ import com.mylab.cromero.web.form.BaseForm;
 
 @Controller
 @RequestMapping(value = "/")
-public class IndexController {
+public class WebController {
 
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 

@@ -19,15 +19,15 @@ public class BaseServiceImplTest {
     @Autowired
     private BaseService baseService;
 
-//    @Transactional
-//    @Test(expected = BaseNotFoundException.class)
-//    public void testDeleteBaseNotExist() {
-//
-//        BaseRequest base = new BaseRequest();
-//        base.setName("margarita");
-//        baseService.deleteBase(base);
-//
-//    }
+    @Transactional
+    @Test(expected = BaseNotFoundException.class)
+    public void testDeleteBaseNotExist() {
+
+        BaseRequest base = new BaseRequest();
+        base.setName("margarita");
+        baseService.deleteBase(base);
+
+    }
 
     @Transactional
     @Test
