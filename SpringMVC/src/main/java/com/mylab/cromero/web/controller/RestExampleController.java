@@ -73,7 +73,7 @@ public class RestExampleController {
 	}
 
 	// Convert a predefined exception to an HTTP Status code Not Found
-//	@ResponseStatus(value = HttpStatus.NOT_FOUND, reason = "Base not found")
+	// @ResponseStatus(value = HttpStatus.NOT_FOUND, reason = "Base not found")
 	@ExceptionHandler(BaseNotFoundException.class)
 	public ErrorResponse notFound(BaseNotFoundException exception) {
 		ErrorResponse errorResponse = new ErrorResponse();
@@ -83,7 +83,7 @@ public class RestExampleController {
 
 	}
 
-//	@ResponseStatus(value = HttpStatus.SERVICE_UNAVAILABLE, reason = "service not available")
+	//@ResponseStatus(value = HttpStatus.SERVICE_UNAVAILABLE, reason = "service not available")
 	@ExceptionHandler(Exception.class)
 	public ErrorResponse error(Exception exception) {
 		exception.printStackTrace();
