@@ -6,7 +6,7 @@
 <body>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Pizza example</title>
+<title>Cristian Romero Example</title>
 <link type="text/css"
 	href="<%=request.getContextPath()%>/resources/css/bootstrap.css"
 	rel="stylesheet" />
@@ -14,7 +14,7 @@
 <body>
 
 
-	<div class="container" >
+	<div class="container">
 		<h1>New Base view</h1>
 		<form:form method="post" action="addBase" modelAttribute="base"
 			role="form" class="form-horizontal">
@@ -25,11 +25,11 @@
 
 				<form:input path="name" placeholder="Enter name" />
 				<font color='red'><form:errors path='name' /></font>
-				
+
 			</div>
-			
+
 			<div class="form-group">
-			<button type="submit" class="btn btn-success btn-large">Submit</button>
+				<button type="submit" class="btn btn-success btn-large">Submit</button>
 			</div>
 
 

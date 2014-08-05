@@ -9,7 +9,7 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Pizza example</title>
+<title>Cristian Romero Example</title>
 <link type="text/css"
 	href="<%=request.getContextPath()%>/resources/css/bootstrap.css"
 	rel="stylesheet" />
@@ -20,7 +20,8 @@
 	<div class="container" style="padding-top: 1em;">
 		<h1>Base repository</h1>
 		<c:if test="${! empty findAllBases}">
-			<table class="table table-striped table-bordered table-condensed" width="647">
+			<table class="table table-striped table-bordered table-condensed"
+				width="647">
 				<thead>
 					<tr>
 						<th>Id</th>
@@ -44,8 +45,8 @@
 		<c:if test="${empty findAllBases}">
 			Empty repository, ....
 		</c:if>
-		<a role="button" class="btn btn-success btn-large"  href="<c:url value="/addBase"/>">Add new base
-			of pizza</a>
+		<a role="button" class="btn btn-success btn-large"
+			href="<c:url value="/addBase"/>">Add new base of pizza</a>
 	</div>
 
 </body>
