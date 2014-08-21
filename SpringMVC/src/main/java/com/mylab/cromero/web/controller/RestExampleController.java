@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -35,7 +36,7 @@ public class RestExampleController {
 	//example of calling with pageable 
 	//http://localhost:8080/SpringMVC/base?sort=firstname&sort=lastname,asc&size=444&page=22
 	@RequestMapping(method = RequestMethod.GET)
-	public List<BaseResponse> listAllBase(Pageable pageable) {
+	public List<BaseResponse> listAllBase(@PageableDefault(size = 50, page = 2) Pageable pageable) {
 		
 	
 		logger.debug("paginación recibida :{}",pageable);
