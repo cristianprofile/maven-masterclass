@@ -2,6 +2,7 @@ package com.mylab.cromero.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
@@ -17,6 +18,7 @@ import com.mylab.cromero.dto.BaseResponse;
 import com.mylab.cromero.exception.BaseNotFoundException;
 import com.mylab.cromero.repository.BaseRepository;
 import com.mylab.cromero.service.BaseService;
+import com.mylab.cromero.service.mapper.MapperSerializer;
 
 /**
  * <h1>Base Service Implement!</h1> Bussiness Service example using repository
@@ -59,14 +61,10 @@ public class BaseServiceImpl implements BaseService {
 		this.logger.debug("Begin operation: findAllBases ");
 
 		List<Base> findAll = baseRepository.findAll();
-		List<BaseResponse> listBases = findAll.stream().map((Base base) -> {
-			BaseResponse baseResponse = new BaseResponse();
-			baseResponse.setName(base.getName());
-			baseResponse.setId(base.getId());
-			return baseResponse;
-		}
-		).collect(Collectors.toList());
-			
+		List<BaseResponse> listBases = findAll.stream()
+				.map(MapperSerializer.getBaseToBaseResponseMapperLambdaFunction())
+				.collect(Collectors.toList());
+
 		this.logger.debug("End operation: findAllBases {} ", listBases);
 		return listBases;
 	}
@@ -86,9 +84,7 @@ public class BaseServiceImpl implements BaseService {
 		this.logger.debug("Begin operation: searching base wit id :{} ", id);
 		Base base = baseRepository.findOne(id);
 		if (base != null) {
-			BaseResponse baseResponse = new BaseResponse();
-			baseResponse.setName(base.getName());
-			baseResponse.setId(base.getId());
+			BaseResponse baseResponse = MapperSerializer.serializeObject(base);
 			return baseResponse;
 		} else {
 			throw new BaseNotFoundException();
