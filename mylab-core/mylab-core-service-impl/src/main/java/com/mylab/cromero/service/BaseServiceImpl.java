@@ -2,6 +2,7 @@ package com.mylab.cromero.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -56,14 +57,16 @@ public class BaseServiceImpl implements BaseService {
 	@Override
 	public List<BaseResponse> findAllBases() {
 		this.logger.debug("Begin operation: findAllBases ");
-		List<BaseResponse> listBases = new ArrayList<BaseResponse>();
+
 		List<Base> findAll = baseRepository.findAll();
-		for (Base base : findAll) {
+		List<BaseResponse> listBases = findAll.stream().map((Base base) -> {
 			BaseResponse baseResponse = new BaseResponse();
 			baseResponse.setName(base.getName());
 			baseResponse.setId(base.getId());
-			listBases.add(baseResponse);
+			return baseResponse;
 		}
+		).collect(Collectors.toList());
+			
 		this.logger.debug("End operation: findAllBases {} ", listBases);
 		return listBases;
 	}
@@ -78,22 +81,18 @@ public class BaseServiceImpl implements BaseService {
 	}
 
 	@Override
-	public BaseResponse getBase(Long id)  throws BaseNotFoundException {
+	public BaseResponse getBase(Long id) throws BaseNotFoundException {
 		// TODO Auto-generated method stub
 		this.logger.debug("Begin operation: searching base wit id :{} ", id);
 		Base base = baseRepository.findOne(id);
-		if (base!=null)
-		{
+		if (base != null) {
 			BaseResponse baseResponse = new BaseResponse();
 			baseResponse.setName(base.getName());
 			baseResponse.setId(base.getId());
-			return baseResponse;	
-		}
-		else
-		{
+			return baseResponse;
+		} else {
 			throw new BaseNotFoundException();
 		}
-		
 
 	}
 
@@ -108,14 +107,12 @@ public class BaseServiceImpl implements BaseService {
 		}
 		this.logger.debug("End operation: deleteBase by id ");
 	}
-	
-	
+
 	@Override
 	public void updateBase(final BaseRequest baseUpdate) {
 		this.logger.debug("Begin operation: update request:{} ", baseUpdate);
 		Base base = baseRepository.findOne(baseUpdate.getId());
-		if (base==null)
-		{
+		if (base == null) {
 			throw new BaseNotFoundException();
 		}
 		base.setName(baseUpdate.getName());
