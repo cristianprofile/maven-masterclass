@@ -58,13 +58,15 @@
 			<artifactId>spring-webmvc</artifactId>
 		</dependency>
 
-		
+
 
 		<dependency>
 			<groupId>com.mylab.cromero.core</groupId>
 			<artifactId>mylab-core-service-impl</artifactId>
 			<version>0.0.2-SNAPSHOT</version>
 		</dependency>
+
+
 	</dependencies>
 
 	<build>
@@ -155,14 +157,24 @@
 				<version>1.1</version>
 			</plugin>
 			<plugin>
-				<groupId>org.mortbay.jetty</groupId>
+				<groupId>org.eclipse.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
-				<version>8.1.4.v20120524</version>
+				<version>9.2.2.v20140723</version>
+
 				<configuration>
-					<webAppConfig>
-						<contextPath>/SpringMVC</contextPath>
-					</webAppConfig>
+					<jettyXml>src/dev/resources/jetty-ds-dev.xml</jettyXml>
+					<webApp>
+						<extraClasspath>${basedir}/jetty/classpath</extraClasspath>
+					</webApp>
 				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.hsqldb</groupId>
+						<artifactId>hsqldb</artifactId>
+						<scope>runtime</scope>
+						<version>2.2.9</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 			<plugin>
 				<groupId>net.wasdev.wlp.maven.plugins</groupId>
