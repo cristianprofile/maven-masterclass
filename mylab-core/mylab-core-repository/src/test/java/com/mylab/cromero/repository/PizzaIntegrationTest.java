@@ -11,14 +11,15 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.mylab.cromero.domain.Pizza;
-import com.mylab.cromero.repository.PizzaRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
+@ActiveProfiles(profiles = "dev")
 @ContextConfiguration(locations = "classpath*:/META-INF/spring/applicationContext-jpa-test.xml")
 @Transactional
 @Configurable

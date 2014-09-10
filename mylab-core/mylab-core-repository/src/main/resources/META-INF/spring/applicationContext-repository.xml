@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <beans xmlns:aop="http://www.springframework.org/schema/aop"
-	xmlns="http://www.springframework.org/schema/beans" 
-	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:tx="http://www.springframework.org/schema/tx"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/aop
 	                    http://www.springframework.org/schema/aop/spring-aop.xsd
 	                    http://www.springframework.org/schema/beans
@@ -14,7 +12,12 @@
                         http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 	<import resource="classpath:/META-INF/spring/applicationContext-jpa.xml" />
-    
+
+
+
+
+
+
 
 	<bean class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close" id="dataSource">
@@ -38,23 +41,42 @@
 	<tx:annotation-driven mode="proxy"
 		transaction-manager="transactionManager" />
 
-	<bean
-		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
-		id="entityManagerFactory">
-		<property name="dataSource" ref="dataSource" />
-		<property name="packagesToScan" value="com.mylab.cromero.domain" />
-		<property name="jpaVendorAdapter">
-			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-				<property name="showSql" value="${database.showSql}"></property>
-			</bean>
-		</property>
-		<property name="jpaProperties">
-			<props>
-				<prop key="hibernate.hbm2ddl.auto">${database.hibernate.hbm2ddl.auto}</prop>
-				<prop key="hibernate.dialect">${database.hibernate.dialect}</prop>
-				<prop key="hibernate.ejb.naming_strategy">org.hibernate.cfg.ImprovedNamingStrategy</prop>
-			</props>
-		</property>
-	</bean>
+	<beans profile="dev">
+		<bean
+			class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
+			id="entityManagerFactory">
+			<property name="dataSource" ref="dataSource" />
+			<property name="packagesToScan" value="com.mylab.cromero.domain" />
+			<property name="jpaVendorAdapter">
+				<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+					<property name="showSql" value="${database.showSql}"></property>
+				</bean>
+			</property>
+			<property name="jpaProperties">
+				<props>
+					<prop key="hibernate.hbm2ddl.auto">${database.hibernate.hbm2ddl.auto}</prop>
+					<prop key="hibernate.dialect">${database.hibernate.dialect}</prop>
+					<prop key="hibernate.ejb.naming_strategy">org.hibernate.cfg.ImprovedNamingStrategy</prop>
+				</props>
+			</property>
+		</bean>
+	</beans>
+	
+	
+	<beans profile="prod">
+		<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+			<property name="jndiName" value="jdbc/orcl" />
+<!-- 			<property name="resourceRef" value="true" /> -->
+			<!-- <property name="defaultObject" ref="developmentDataSource"></property> -->
+		</bean>
+
+		<bean id="myConnectionFactory"
+			class="org.springframework.jdbc.datasource.UserCredentialsDataSourceAdapter">
+			<property name="targetConnectionFactory" ref="dataSource" />
+			<property name="username" value="myusername" />
+			<property name="password" value="mypassword" />
+
+		</bean>
+	</beans>
 
 </beans>
