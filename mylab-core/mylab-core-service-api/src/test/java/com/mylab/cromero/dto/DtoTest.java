@@ -37,7 +37,11 @@ public class DtoTest {
 
         FilterChain filterChain = new FilterChain(filterNonConcrete, filterNestedClasses,
                 exclusionListFilter);
-        pojoClasses = PojoClassFactory.getPojoClasses("com.mylab.cromero.dto", filterChain);
+        
+        
+        
+        pojoClasses = PojoClassFactory.getPojoClassesRecursively("com.mylab", filterChain);
+
 
         // Create Rules to validate structure for POJO_PACKAGE
         pojoValidator.addRule(new NoPublicFieldsRule());
