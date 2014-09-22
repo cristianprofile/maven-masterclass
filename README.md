@@ -6,7 +6,7 @@ Multi-module maven project example using SPRING 3
 - Simple web app spring mvc using services
 - Rest Service implementation example with repository and mail access
 - Repository access with spring data jpa
-- Unitary and Integration test concept
+- Unitary and Integration test concept using hsldb and mockito (http://docs.mockito.googlecode.com/hg/latest/org/mockito/Mockito.html)
 
 To test web app type:  mvn install jetty:run 
 
