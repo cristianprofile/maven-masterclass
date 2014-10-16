@@ -2,6 +2,7 @@ package com.mylab.cromero.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -44,13 +45,15 @@ public class BaseServiceImpl implements BaseService {
 	@Override
 	public void deleteBase(final BaseRequest base) throws BaseNotFoundException {
 		this.logger.debug("Begin operation: deleteBase, request:{} ", base);
-
+//		Optional<Base> findOne = baseRepository.findOne((long) 1);
 		List<Base> findByNameContaining = baseRepository.findByName(base
 				.getName());
 		if (findByNameContaining.isEmpty()) {
 			throw new BaseNotFoundException(
 					"No se ha encontrado ninguna base con ese nombre");
 		}
+		
+		
 		baseRepository.delete(findByNameContaining.get(0).getId());
 
 		this.logger.debug("End operation: deleteBase ");

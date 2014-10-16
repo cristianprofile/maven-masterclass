@@ -28,6 +28,8 @@ public class BaseServiceImplTest {
 
 	@Mock
 	private BaseRepository baseRepository;
+	
+	
 
     @Test(expected = BaseNotFoundException.class)
     public void testDeleteBaseNotExist() {
