@@ -1,7 +1,7 @@
-maven-masterclass
+maven-masterclass spring maven java 1.8
 =======================
 
-Multi-module maven project example using SPRING 3
+Multi-module maven project example using SPRING 4 and java 1.8
 
 - Simple web app spring mvc using services
 - Rest Service implementation example with repository and mail access
