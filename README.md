@@ -1,4 +1,4 @@
-maven-masterclass spring maven java 1.8
+Spring Maven Java 1.8
 =======================
 
 Multi-module maven project example using SPRING 4 and java 1.8
