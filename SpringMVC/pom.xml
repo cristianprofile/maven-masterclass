@@ -165,7 +165,13 @@
 					<jettyXml>src/dev/resources/jetty-ds-dev.xml</jettyXml>
 					<webApp>
 						<extraClasspath>${basedir}/jetty/classpath</extraClasspath>
+						<contextPath>/SpringMVC</contextPath>
 					</webApp>
+          				<httpConnector>
+               					<port>8080</port>
+        					<host>localhost</host>
+        				</httpConnector>
+        				<scanIntervalSeconds>10</scanIntervalSeconds>
 				</configuration>
 				<dependencies>
 					<dependency>
