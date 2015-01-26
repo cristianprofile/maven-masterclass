@@ -173,6 +173,14 @@
         				</httpConnector>
         				<scanIntervalSeconds>10</scanIntervalSeconds>
 				</configuration>
+				 <executions> 
+					         <execution> 
+					            <phase>install</phase> 
+					              <goals> 
+					                <goal>run</goal> 
+					              </goals> 
+					         </execution> 
+					       </executions> 
 				<dependencies>
 					<dependency>
 						<groupId>org.hsqldb</groupId>
