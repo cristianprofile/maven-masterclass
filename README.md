@@ -8,7 +8,7 @@ Multi-module maven project example using SPRING 4 and java 1.8
 - Repository access with spring data jpa
 - Unitary and Integration test concept using hsldb and mockito (http://docs.mockito.googlecode.com/hg/latest/org/mockito/Mockito.html)
 
-To test web app type:  mvn install jetty:run 
+To test web app type:  mvn install jetty:run or sort command mvn deploy (jetty:run goal is linked to maven deploy phase)
 
 - http://localhost:8080/SpringMVC/   (spring mvc jsp model)
 

@@ -58,4 +58,23 @@ public interface BaseService {
      */
 	void updateBase(BaseRequest baseUpdate);
 
+	/**
+	 * List of sorted Bases
+	 * @return
+	 */
+	List<BaseResponse> findAllBasesSorted();
+
+	/**
+	 * List of Bases with pagination
+	 * @return
+	 */
+	List<BaseResponse> findAllBasesPagination(int pageIndex);
+
+	/**
+	 * List of Bases with pagination and sort
+	 * @param pageIndex
+	 * @return
+	 */
+	List<BaseResponse> findAllBasesPaginationAndSorted(int pageIndex);
+
 }
