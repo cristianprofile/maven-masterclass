@@ -50,15 +50,14 @@ public class BaseServiceImpl implements BaseService {
 	@Override
 	public void deleteBase(final BaseRequest base) throws BaseNotFoundException {
 		this.logger.debug("Begin operation: deleteBase, request:{} ", base);
-//		Optional<Base> findOne = baseRepository.findOne((long) 1);
+		// Optional<Base> findOne = baseRepository.findOne((long) 1);
 		List<Base> findByNameContaining = baseRepository.findByName(base
 				.getName());
 		if (findByNameContaining.isEmpty()) {
 			throw new BaseNotFoundException(
 					"No se ha encontrado ninguna base con ese nombre");
 		}
-		
-		
+
 		baseRepository.delete(findByNameContaining.get(0).getId());
 
 		this.logger.debug("End operation: deleteBase ");
@@ -69,8 +68,10 @@ public class BaseServiceImpl implements BaseService {
 		this.logger.debug("Begin operation: findAllBases ");
 
 		List<Base> findAll = baseRepository.findAll();
-		List<BaseResponse> listBases = findAll.stream()
-				.map(MapperSerializer.getBaseToBaseResponseMapperLambdaFunction())
+		List<BaseResponse> listBases = findAll
+				.stream()
+				.map(MapperSerializer
+						.getBaseToBaseResponseMapperLambdaFunction())
 				.collect(Collectors.toList());
 
 		this.logger.debug("End operation: findAllBases {} ", listBases);
@@ -122,60 +123,83 @@ public class BaseServiceImpl implements BaseService {
 		base.setName(baseUpdate.getName());
 		this.logger.debug("End operation: update request:{} ", base);
 	}
-	
+
 	@Override
 	public List<BaseResponse> findAllBasesSorted() {
 		this.logger.debug("Begin operation: findAllBasesSorted ");
 
-	    ArrayList<Order> arrayList = new ArrayList<Order>();
-	    arrayList.add(new Order(Direction.ASC, "name"));
-	    arrayList.add(new Order(Direction.ASC, "version"));
-	    
+		ArrayList<Order> arrayList = new ArrayList<Order>();
+		arrayList.add(new Order(Direction.ASC, "name"));
+		arrayList.add(new Order(Direction.ASC, "version"));
+
 		List<Base> findAll = baseRepository.findAll(new Sort(arrayList));
-		
-		
-		List<BaseResponse> listBases = findAll.stream()
-				.map(MapperSerializer.getBaseToBaseResponseMapperLambdaFunction())
+
+		List<BaseResponse> listBases = findAll
+				.stream()
+				.map(MapperSerializer
+						.getBaseToBaseResponseMapperLambdaFunction())
 				.collect(Collectors.toList());
 
 		this.logger.debug("End operation: findAllBasesSorted {} ", listBases);
 		return listBases;
-	}	
-	
+	}
+
 	@Override
 	public List<BaseResponse> findAllBasesPagination(int pageIndex) {
 		this.logger.debug("Begin operation: findAllBasesPagination ");
 
-	    PageRequest pageRequest = new PageRequest(pageIndex, 2);
-		
+		PageRequest pageRequest = new PageRequest(pageIndex, 2);
+
 		Page<Base> page = baseRepository.findAll(pageRequest);
-		
-		List<BaseResponse> listBases = page.getContent().stream()
-				.map(MapperSerializer.getBaseToBaseResponseMapperLambdaFunction())
+
+		List<BaseResponse> listBases = page
+				.getContent()
+				.stream()
+				.map(MapperSerializer
+						.getBaseToBaseResponseMapperLambdaFunction())
 				.collect(Collectors.toList());
 
-		this.logger.debug("End operation: findAllBasesPagination {} ", listBases);
+		this.logger.debug("End operation: findAllBasesPagination {} ",
+				listBases);
 		return listBases;
 	}
-	
-	@Override 
+
+	@Override
 	public List<BaseResponse> findAllBasesPaginationAndSorted(int pageIndex) {
 		this.logger.debug("Begin operation: findAllBasesPagination ");
 
 		ArrayList<Order> arrayList = new ArrayList<Order>();
-	    arrayList.add(new Order(Direction.ASC, "name"));
-	    arrayList.add(new Order(Direction.ASC, "version"));
-	    
-	    PageRequest pageRequest = new PageRequest(pageIndex, 2, new Sort(arrayList));
-		
+		arrayList.add(new Order(Direction.ASC, "name"));
+		arrayList.add(new Order(Direction.ASC, "version"));
+
+		PageRequest pageRequest = new PageRequest(pageIndex, 2, new Sort(
+				arrayList));
+
 		Page<Base> page = baseRepository.findAll(pageRequest);
-		
-		List<BaseResponse> listBases = page.getContent().stream()
-				.map(MapperSerializer.getBaseToBaseResponseMapperLambdaFunction())
+
+		List<BaseResponse> listBases = page
+				.getContent()
+				.stream()
+				.map(MapperSerializer
+						.getBaseToBaseResponseMapperLambdaFunction())
 				.collect(Collectors.toList());
 
-		this.logger.debug("End operation: findAllBasesPagination {} ", listBases);
+		this.logger.debug("End operation: findAllBasesPagination {} ",
+				listBases);
 		return listBases;
+	}
+
+	@Override
+	public Optional<BaseResponse> findById(Long id) {
+		this.logger.debug("Begin operation: findById With optional return object value ");
+		Optional<Base> base = baseRepository.findById(id);
+		System.out.println(base);
+		Optional<BaseResponse> baseResponse = Optional.empty();
+		if (base.isPresent()) {
+			baseResponse = Optional.of(MapperSerializer.serializeObject(base.get()));
+		}
+		this.logger.debug("End operation: findById With optional return object value{} ",baseResponse);
+		return baseResponse;
 	}
 
 }
