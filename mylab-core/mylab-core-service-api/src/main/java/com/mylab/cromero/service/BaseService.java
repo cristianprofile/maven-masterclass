@@ -1,6 +1,7 @@
 package com.mylab.cromero.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.mylab.cromero.dto.BaseRequest;
 import com.mylab.cromero.dto.BaseResponse;
@@ -76,5 +77,8 @@ public interface BaseService {
 	 * @return
 	 */
 	List<BaseResponse> findAllBasesPaginationAndSorted(int pageIndex);
+
+
+	Optional<BaseResponse> findById(Long id);
 
 }
