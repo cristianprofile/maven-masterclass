@@ -29,6 +29,4 @@ You can access to video course an ppt of presentation at url below:
 
 Cristian Romero Matesanz WUL4 #Training Thursday3 - Maven [Presentation ppt](http://www.slideshare.net/cristianromeromatesanz/maven-31576343 "Cristian Romero Matesanz WUL4 #Training Thursday3 - Maven")
 
-Cristian Romero Matesanz WUL4 #Training Thursday3 - Maven [Video Course](https://www.youtube.com/watch?v=kUxSyVCLcQI "Cristian Romero Matesanz WUL4 #Training Thursday3 - Maven")
-
-Jenkins/cloudbeed IC of my projects [Jenkins](http://cristianprofile.ci.cloudbees.com "Cristian Romero Matesanz WUL4 #Training Thursday3 - Maven")
+New features coming soon!!!!!Spring boot refactor code without xml config 2015!!!!
