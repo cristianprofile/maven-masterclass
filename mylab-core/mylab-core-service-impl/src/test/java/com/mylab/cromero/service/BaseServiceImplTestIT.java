@@ -1,6 +1,7 @@
 package com.mylab.cromero.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -21,113 +22,140 @@ import com.mylab.cromero.service.BaseService;
 @ContextConfiguration(locations = "classpath*:/META-INF/spring/applicationContext-service-test.xml")
 public class BaseServiceImplTestIT {
 
-    @Autowired
-    private BaseService baseService;
+	@Autowired
+	private BaseService baseService;
 
-    @Transactional
-    @Test(expected = BaseNotFoundException.class)
-    public void testDeleteBaseNotExist() {
+	@Transactional
+	@Test(expected = BaseNotFoundException.class)
+	public void testDeleteBaseNotExist() {
 
-        BaseRequest base = new BaseRequest();
-        base.setName("margarita");
-        baseService.deleteBase(base);
+		BaseRequest base = new BaseRequest();
+		base.setName("margarita");
+		baseService.deleteBase(base);
 
-    }
+	}
 
-    @Transactional
-    @Test
-    public void testDeleteBaseOk() {
+	@Transactional
+	@Test
+	public void testDeleteBaseOk() {
 
-        BaseRequest base = new BaseRequest();
-        base.setName("margarita");
-        baseService.saveBase(base);
-        Assert.assertEquals(baseService.findAllBases().size(), 1);
-        baseService.deleteBase(base);
-        Assert.assertEquals(baseService.findAllBases().size(), 0);        
-    }
-    
-    @Transactional
-    @Test
-    public void testFindAllSortedOk() {
+		BaseRequest base = new BaseRequest();
+		base.setName("margarita");
+		baseService.saveBase(base);
+		Assert.assertEquals(baseService.findAllBases().size(), 1);
+		baseService.deleteBase(base);
+		Assert.assertEquals(baseService.findAllBases().size(), 0);
+	}
 
-        BaseRequest base = new BaseRequest();
-        
-        base.setName("margarita");
-        baseService.saveBase(base);
-      
-        base.setName("piña");
-        baseService.saveBase(base);
+	@Transactional
+	@Test
+	public void testFindAllSortedOk() {
 
-        base.setName("atun");
-        baseService.saveBase(base);
-        
-        base.setName("codillo");
-        baseService.saveBase(base);
-        
-        List<BaseResponse> findAllBasesSorted = baseService.findAllBasesSorted();
-        Assert.assertEquals(findAllBasesSorted.size(), 4);
-        Assert.assertTrue(findAllBasesSorted.get(0).getName().equals("atun"));
-        Assert.assertTrue(findAllBasesSorted.get(1).getName().equals("codillo"));
-        Assert.assertTrue(findAllBasesSorted.get(2).getName().equals("margarita"));
-        Assert.assertTrue(findAllBasesSorted.get(3).getName().equals("piña"));
-       
-    }
-    
-    @Transactional
-    @Test
-    public void testFindAllBasesPaginationOk() {
+		BaseRequest base = new BaseRequest();
 
-        BaseRequest base = new BaseRequest();
-        
-        base.setName("margarita");
-        baseService.saveBase(base);
-      
-        base.setName("piña");
-        baseService.saveBase(base);
+		base.setName("margarita");
+		baseService.saveBase(base);
 
-        base.setName("atun");
-        baseService.saveBase(base);
-        
-        base.setName("codillo");
-        baseService.saveBase(base);
-        
-        List<BaseResponse> findAllBasesSorted = baseService.findAllBasesPagination(0);
-        Assert.assertEquals(findAllBasesSorted.size(), 2);
-        
-        findAllBasesSorted = baseService.findAllBasesPagination(1);
-        Assert.assertEquals(findAllBasesSorted.size(), 2);
-        
-        findAllBasesSorted = baseService.findAllBasesPagination(2);
-        Assert.assertEquals(findAllBasesSorted.size(), 0);
-    }
-    
-    @Transactional
-    @Test
-    public void testFindAllBasesPaginationAndSortOk() {
+		base.setName("piña");
+		baseService.saveBase(base);
 
-        BaseRequest base = new BaseRequest();
-        
-        base.setName("margarita");
-        baseService.saveBase(base);
-      
-        base.setName("piña");
-        baseService.saveBase(base);
+		base.setName("atun");
+		baseService.saveBase(base);
 
-        base.setName("atun");
-        baseService.saveBase(base);
-        
-        base.setName("codillo");
-        baseService.saveBase(base);
-        
-        List<BaseResponse> findAllBasesSorted = baseService.findAllBasesPaginationAndSorted(0);
-        Assert.assertEquals(findAllBasesSorted.size(), 2);
-        Assert.assertTrue(findAllBasesSorted.get(0).getName().equals("atun"));
-        
-        findAllBasesSorted = baseService.findAllBasesPaginationAndSorted(1);
-        Assert.assertEquals(findAllBasesSorted.size(), 2);
-        
-        findAllBasesSorted = baseService.findAllBasesPaginationAndSorted(2);
-        Assert.assertEquals(findAllBasesSorted.size(), 0);
-    }
+		base.setName("codillo");
+		baseService.saveBase(base);
+
+		List<BaseResponse> findAllBasesSorted = baseService
+				.findAllBasesSorted();
+		Assert.assertEquals(findAllBasesSorted.size(), 4);
+		Assert.assertTrue(findAllBasesSorted.get(0).getName().equals("atun"));
+		Assert.assertTrue(findAllBasesSorted.get(1).getName().equals("codillo"));
+		Assert.assertTrue(findAllBasesSorted.get(2).getName()
+				.equals("margarita"));
+		Assert.assertTrue(findAllBasesSorted.get(3).getName().equals("piña"));
+
+	}
+
+	@Transactional
+	@Test
+	public void testFindAllBasesPaginationOk() {
+
+		BaseRequest base = new BaseRequest();
+
+		base.setName("margarita");
+		baseService.saveBase(base);
+
+		base.setName("piña");
+		baseService.saveBase(base);
+
+		base.setName("atun");
+		baseService.saveBase(base);
+
+		base.setName("codillo");
+		baseService.saveBase(base);
+
+		List<BaseResponse> findAllBasesSorted = baseService
+				.findAllBasesPagination(0);
+		Assert.assertEquals(findAllBasesSorted.size(), 2);
+
+		findAllBasesSorted = baseService.findAllBasesPagination(1);
+		Assert.assertEquals(findAllBasesSorted.size(), 2);
+
+		findAllBasesSorted = baseService.findAllBasesPagination(2);
+		Assert.assertEquals(findAllBasesSorted.size(), 0);
+	}
+
+	@Transactional
+	@Test
+	public void testFindAllBasesPaginationAndSortOk() {
+
+		BaseRequest base = new BaseRequest();
+
+		base.setName("margarita");
+		baseService.saveBase(base);
+
+		base.setName("piña");
+		baseService.saveBase(base);
+
+		base.setName("atun");
+		baseService.saveBase(base);
+
+		base.setName("codillo");
+		baseService.saveBase(base);
+
+		List<BaseResponse> findAllBasesSorted = baseService
+				.findAllBasesPaginationAndSorted(0);
+		Assert.assertEquals(findAllBasesSorted.size(), 2);
+		Assert.assertTrue(findAllBasesSorted.get(0).getName().equals("atun"));
+
+		findAllBasesSorted = baseService.findAllBasesPaginationAndSorted(1);
+		Assert.assertEquals(findAllBasesSorted.size(), 2);
+
+		findAllBasesSorted = baseService.findAllBasesPaginationAndSorted(2);
+		Assert.assertEquals(findAllBasesSorted.size(), 0);
+	}
+
+	@Transactional
+	@Test
+	public void testFindAllOptional() {
+
+		BaseRequest base = new BaseRequest();
+
+		base.setName("margarita");
+		baseService.saveBase(base);
+
+		base.setName("piña");
+		baseService.saveBase(base);
+
+		base.setName("atun");
+		baseService.saveBase(base);
+
+		base.setName("codillo");
+		baseService.saveBase(base);
+
+		Optional<BaseResponse> findById = baseService.findById(130L);
+		Assert.assertTrue(!findById.isPresent());
+
+	}
 
 }
