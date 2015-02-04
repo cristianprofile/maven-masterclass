@@ -193,7 +193,6 @@ public class BaseServiceImpl implements BaseService {
 	public Optional<BaseResponse> findById(Long id) {
 		this.logger.debug("Begin operation: findById With optional return object value ");
 		Optional<Base> base = baseRepository.findById(id);
-		System.out.println(base);
 		Optional<BaseResponse> baseResponse = Optional.empty();
 		if (base.isPresent()) {
 			baseResponse = Optional.of(MapperSerializer.serializeObject(base.get()));

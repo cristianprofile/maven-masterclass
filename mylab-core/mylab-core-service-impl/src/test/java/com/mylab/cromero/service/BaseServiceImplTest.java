@@ -82,7 +82,6 @@ public class BaseServiceImplTest {
 		base2.setName("piña");
 		listaBasesRepositorio.add(base2);
 
-		System.out.println(listaBasesRepositorio);
 		when(this.baseRepository.findAll(any(Sort.class))).thenReturn(
 				listaBasesRepositorio);
 
