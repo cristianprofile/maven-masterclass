@@ -32,9 +32,9 @@ If you want to access to Rest Service with Spring boot module first run mvn spri
 
 When you run Spring boot app Spring actuator add features to monitore your services:
 
-http://localhost:9091/metrics ()
-http://localhost:9091/health (you can check if your app is available)
-http://localhost:9091/mappings (Spring Boot Actuator includes a metrics service with 
+- http://localhost:9091/metrics ()
+- http://localhost:9091/health (you can check if your app is available)
+- http://localhost:9091/mappings (Spring Boot Actuator includes a metrics service with 
 “gauge” and “counter” support. A “gauge” records a single value; and a “counter” records a delta 
 (an increment or decrement). Metrics for all HTTP requests are automatically 
 recorded, so if you hit the metrics endpoint should see a sensible response.)
