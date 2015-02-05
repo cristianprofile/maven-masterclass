@@ -46,4 +46,10 @@ You can access to video course an ppt of presentation at url below:
 
 Cristian Romero Matesanz WUL4 #Training Thursday3 - Maven [Presentation ppt](http://www.slideshare.net/cristianromeromatesanz/maven-31576343 "Cristian Romero Matesanz WUL4 #Training Thursday3 - Maven")
 
+------------------------------------------------------------------------------------------------------
+Note 1: If you want to use spring profiles you can use maven enviroment variable like this:
+
+-Dspring.profiles.active="profile1,profile2"
+
+
 New features coming soon!!!!!Spring boot refactor code without xml config 2015!!!!
