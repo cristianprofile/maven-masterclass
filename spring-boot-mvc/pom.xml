@@ -25,7 +25,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-<!-- 			<version>1.2.2.BUILD-SNAPSHOT</version> -->
 		</dependency>
 		
 		<dependency>
@@ -39,7 +38,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>1.2.2.BUILD-SNAPSHOT</version>
 				<dependencies>
 					<dependency>
 						<groupId>org.springframework</groupId>
