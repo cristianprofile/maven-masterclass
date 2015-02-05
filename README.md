@@ -24,11 +24,11 @@ If you want to access to Rest Service example api then you need to type this url
 
 If you want to access to Rest Service with Spring boot module first run mvn spring-boot:run:
 
-- http://localhost:9090/SpringMVC/base (get list of all bases)
-- http://localhost:9090/SpringMVC/base/1 (get base info with id=1)
-- http://localhost:9090/SpringMVC/base/1 (delete base info with id=1)
-- http://localhost:9090/SpringMVC/base (post create new base sending json info. Example "name":"rolling pizza" )
-- http://localhost:9090/SpringMVC/base (update update existing base sending json info. Example {"name":"rolling pizza 2","id":1})
+- http://localhost:9090/base (get list of all bases)
+- http://localhost:9090/base/1 (get base info with id=1)
+- http://localhost:9090/base/1 (delete base info with id=1)
+- http://localhost:9090/base (post create new base sending json info. Example "name":"rolling pizza" )
+- http://localhost:9090/base (update update existing base sending json info. Example {"name":"rolling pizza 2","id":1})
 
 When you run Spring boot app Spring actuator add features to monitore your services:
 

@@ -34,7 +34,8 @@ public class HelloWorldController {
 	// example of calling with pageable
 	// http://localhost:8080/SpringMVC/base?sort=firstname&sort=lastname,asc&size=444&page=22
 	@RequestMapping(method = RequestMethod.GET)
-	public List<BaseResponse> listAllBase(@PageableDefault(size = 50, page = 2) Pageable pageable) {
+	public List<BaseResponse> listAllBase(
+			@PageableDefault(size = 50, page = 2) Pageable pageable) {
 
 		// logger.debug("paginación recibida :{}",pageable);
 		List<BaseResponse> findAllBases = baseService.findAllBases();
