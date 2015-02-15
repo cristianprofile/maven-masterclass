@@ -2,6 +2,8 @@ package com.mylab;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
+import org.springframework.boot.context.embedded.ErrorPage;
 import org.springframework.boot.orm.jpa.EntityScan;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
@@ -13,6 +15,7 @@ import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 import org.springframework.web.servlet.view.tiles3.TilesView;
 import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
+import org.springframework.http.HttpStatus;
 
 import com.mylab.cromero.domain.Base;
 
@@ -62,4 +65,17 @@ public class Application {
         SessionLocaleResolver slr = new SessionLocaleResolver();
         return slr;
     }
+	
+	//see http://www.sporcic.org/2014/05/custom-error-pages-with-spring-boot/
+	@Bean
+	public EmbeddedServletContainerCustomizer containerCustomizer() {
+	 
+	   return (container -> {
+	        ErrorPage error401Page = new ErrorPage(HttpStatus.UNAUTHORIZED, "/401.html");
+	        ErrorPage error404Page = new ErrorPage(HttpStatus.NOT_FOUND, "/404.html");
+	        ErrorPage error500Page = new ErrorPage(HttpStatus.INTERNAL_SERVER_ERROR, "/500.html");
+	 
+	        container.addErrorPages(error401Page, error404Page, error500Page);
+	   });
+	}
 } 
