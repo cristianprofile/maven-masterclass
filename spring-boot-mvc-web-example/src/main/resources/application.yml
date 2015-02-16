@@ -1,6 +1,6 @@
 ﻿server:
     port: 9090
-    contextPath: /mainstay
+    contextPath: /pizza
 management:
     port: 9091
     address: 127.0.0.1

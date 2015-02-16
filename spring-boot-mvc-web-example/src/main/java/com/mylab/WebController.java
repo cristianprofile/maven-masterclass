@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.mylab.cromero.service.BaseService;
 
 @Controller
-@RequestMapping("/base")
+@RequestMapping("/")
 public class WebController {
 
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -20,14 +20,7 @@ public class WebController {
 	@Autowired
 	private BaseService baseService;
 
-	/**
-	 * Home
-	 * 
-	 * @param name
-	 * @param model
-	 * @return
-	 */
-	@RequestMapping("/home")
+	@RequestMapping(method = RequestMethod.GET)
 	public String home() {
 		logger.info("haciendo mi pryeba");
 		return "home";
