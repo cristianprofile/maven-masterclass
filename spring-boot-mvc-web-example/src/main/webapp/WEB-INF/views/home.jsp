@@ -2,6 +2,7 @@
 <div id="content">
 	<legend>
 		<spring:message code="home.legend" />
+		
 	</legend>
 	<p>
 		<spring:message code="home.welcome" />

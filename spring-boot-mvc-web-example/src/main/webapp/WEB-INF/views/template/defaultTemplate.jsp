@@ -2,14 +2,14 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Spring MVC with spring-boot (jstl, tiles, jpa)</title>
+		<title>Spring MVC aawith spring-boot (jstl, tiles, jpa)</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="resources/css/bootstrap.css" />
-		<link rel="stylesheet" href="resources/css/bootstrap-responsive.css" />
-		<link rel="stylesheet" href="resources/css/style.css" />
-		<script src="resources/js/jquery-1.9.1.min.js"></script>
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.css" />
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap-responsive.css" />
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" />
+		<script src="${pageContext.request.contextPath}/resources/js/jquery-1.9.1.min.js"></script>
 	</head>
 <body>
 	<div class="container">

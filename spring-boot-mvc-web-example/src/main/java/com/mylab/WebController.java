@@ -27,9 +27,9 @@ public class WebController {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping("/home")
 	public String home() {
-		logger.info("home controller mapping test");
+		logger.info("haciendo mi pryeba");
 		return "home";
 	}
 	
