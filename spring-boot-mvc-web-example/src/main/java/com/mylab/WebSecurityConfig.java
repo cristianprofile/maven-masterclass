@@ -9,16 +9,15 @@ import org.springframework.security.config.annotation.web.servlet.configuration.
 
 @Configuration
 @EnableWebMvcSecurity
-
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		
-		http.csrf().disable().authorizeRequests().antMatchers("/login", "/home").permitAll()
+
+		http.authorizeRequests().antMatchers("/login", "/home").permitAll()
 				.anyRequest().authenticated().and().authorizeRequests()
-                .antMatchers("/static/**").permitAll()
-                .and().formLogin()
-				.loginPage("/login").permitAll().and().logout().permitAll();
+				.antMatchers("/static/**").permitAll().and().formLogin()
+				.loginPage("/login").permitAll().and().logout()
+				.logoutUrl("/").deleteCookies("remember-me").logoutSuccessUrl("/").permitAll();
 	}
 
 	@Autowired
