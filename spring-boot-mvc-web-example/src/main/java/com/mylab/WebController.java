@@ -1,5 +1,7 @@
 package com.mylab;
 
+import java.util.Locale;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +27,7 @@ public class WebController {
 		logger.info("haciendo mi pryeba");
 		return "home";
 	}
-	
+
 	/**
 	 * List of all users
 	 * 
@@ -38,12 +40,22 @@ public class WebController {
 		logger.info("users");
 		return "users";
 	}
-	
-	
+
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String login(Locale locale, Model model) {
+		return "login";
+	}
+
+	@RequestMapping(value = "/login/error", method = RequestMethod.GET)
+	public String loginWithError(Locale locale, Model model) {
+		model.addAttribute("error", true);
+		return "login";
+	}
+
 	@ExceptionHandler(Exception.class)
 	public void error(Exception exception) {
 		exception.printStackTrace();
-		logger.info("users {}",exception);
+		logger.info("users {}", exception);
 	}
 
 }
