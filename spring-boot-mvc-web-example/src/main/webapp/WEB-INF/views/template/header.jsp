@@ -1,12 +1,13 @@
 <div id="header" class="text-center">
 	<div class="span10">
 		<h3>Spring Boot Base welcome: </h3>
-		<sec:authentication property="principal.username"/>
+		${httpServletRequest.remoteUser}
 	</div>
 	<div class="span2">
 		<a href="?lang=es" class="btn btn-primary">es</a> 
-		<a href="?lang=en"class="btn btn-success">en</a>					 
-		<form th:action="/logout" method="post"
+		<a href="?lang=en"class="btn btn-success">en</a>
+							 
+		<form action="logout" method="post"
 				id="logoutForm">
 				<input type="hidden" name="${_csrf.parameterName}"
 					value="${_csrf.token}" />
