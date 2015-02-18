@@ -6,7 +6,7 @@
 	<div class="span2">
 		<a href="?lang=es" class="btn btn-primary">es</a> 
 		<a href="?lang=en"class="btn btn-success">en</a>					 
-		<form action="j_spring_security_logout" method="post"
+		<form th:action="/logout" method="post"
 				id="logoutForm">
 				<input type="hidden" name="${_csrf.parameterName}"
 					value="${_csrf.token}" />

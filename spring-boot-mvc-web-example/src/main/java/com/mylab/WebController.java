@@ -2,6 +2,8 @@ package com.mylab;
 
 import java.util.Locale;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +26,7 @@ public class WebController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String home() {
-		logger.info("haciendo mi pryeba");
+		logger.info("home controller access");
 		return "home";
 	}
 
@@ -37,18 +39,28 @@ public class WebController {
 	@RequestMapping("/users")
 	public String users(Model model) {
 
-		logger.info("users");
+		logger.info("users controller access");
 		return "users";
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(Locale locale, Model model) {
+		logger.info("login controller access");
 		return "login";
 	}
 
-	@RequestMapping(value = "/login/error", method = RequestMethod.GET)
-	public String loginWithError(Locale locale, Model model) {
-		model.addAttribute("error", true);
+	 // Login form with error
+    @RequestMapping(value = "/login", params = "error")
+    public String loginError(HttpServletRequest req, Model model) {
+    	logger.info("login-error: " + req);
+        model.addAttribute("loginError", true);
+        return "login";
+    }
+    
+    
+    @RequestMapping(value = "/logout", method = RequestMethod.POST)
+	public String logout(Locale locale, Model model) {
+		logger.info("logoutttt controller access");
 		return "login";
 	}
 

@@ -8,10 +8,10 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="css/bootstrap.css" />
-		<link rel="stylesheet" href="css/bootstrap-responsive.css" />
-		<link rel="stylesheet" href="css/style.css" />
-		<script src="js/jquery-1.9.1.min.js"></script>
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css" />
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap-responsive.css" />
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" />
+		<script src="${pageContext.request.contextPath}/js/jquery-1.9.1.min.js"></script>
 	</head>
 <body>
 	<div class="container">

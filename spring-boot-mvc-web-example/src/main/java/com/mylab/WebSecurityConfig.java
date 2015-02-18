@@ -6,6 +6,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.servlet.configuration.EnableWebMvcSecurity;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebMvcSecurity
@@ -13,11 +14,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
-		http.authorizeRequests().antMatchers("/login", "/home").permitAll()
-				.anyRequest().authenticated().and().authorizeRequests()
-				.antMatchers("/static/**").permitAll().and().formLogin()
-				.loginPage("/login").permitAll().and().logout()
-				.logoutUrl("/").deleteCookies("remember-me").logoutSuccessUrl("/").permitAll();
+		http.authorizeRequests()
+				.antMatchers("/users").hasAnyRole("USER").and().authorizeRequests()
+				.antMatchers("/static/**","/j_spring_security_check","/logout","/login").permitAll().and().formLogin()
+			    .loginPage("/login").failureUrl("/login?error").permitAll().and()
+			    .logout().logoutUrl("/logout").logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/").permitAll();
 	}
 
 	@Autowired
