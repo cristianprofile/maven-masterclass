@@ -16,9 +16,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 		http.authorizeRequests()
 				.antMatchers("/users").hasAnyRole("USER").and().authorizeRequests()
-				.antMatchers("/static/**","/j_spring_security_check","/logout","/login").permitAll().and().formLogin()
+				.antMatchers("/static/**","/j_spring_security_check","/logout","/login","/").permitAll().and().formLogin()
 			    .loginPage("/login").failureUrl("/login?error").permitAll().and()
-			    .logout().logoutUrl("/logout").logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/").permitAll();
+			    .logout().permitAll();
 	}
 
 	@Autowired
