@@ -33,6 +33,7 @@ If you want to access to Rest Service example api then you need to type this url
 - http://localhost:8080/SpringMVC/base/1 (delete base info with id=1)
 - http://localhost:8080/SpringMVC/base (post create new base sending json info. Example "name":"rolling pizza" )
 - http://localhost:8080/SpringMVC/base (update update existing base sending json info. Example {"name":"rolling pizza 2","id":1})
+
 ------------------------------------------------------------------------------------------------------
 
 If you want to access to Rest Service with Spring boot module "spring-boot-mvc" first run mvn spring-boot:run:
