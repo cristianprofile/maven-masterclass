@@ -6,15 +6,22 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.servlet.configuration.EnableWebMvcSecurity;
+import org.springframework.security.core.userdetails.UserDetailsService;
 
 @Configuration
 @EnableWebMvcSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+	
+	
+	@Autowired
+	private UserDetailsService userServiceImpl;
+	
+	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
 		http.authorizeRequests()
-				.antMatchers("/pizzas","/info").hasAnyRole("USER").and().authorizeRequests()
+				.antMatchers("/pizzas","/info").hasRole("USER").and().authorizeRequests()
 				.antMatchers("/static/**","/logout","/login").permitAll();
 		
 		http.formLogin().loginPage("/login").failureUrl("/login?error").permitAll();
@@ -25,7 +32,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth)
 			throws Exception {
-		auth.inMemoryAuthentication().withUser("user@ole.com").password("user")
-				.roles("USER");
+//		auth.inMemoryAuthentication().withUser("user@ole.com").password("user@ole.com")
+//		.roles("USER");
+		auth.userDetailsService(userServiceImpl);
 	}
 }
