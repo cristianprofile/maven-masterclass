@@ -2,13 +2,13 @@
 <div id="menu">
 	<ul class="nav nav-list well">
 		<li class="nav-header">
-			<spring:url value="/" var="homeUrl" htmlEscape="true" />
-			<a href="${homeUrl}"><spring:message code="menu.home"/></a>
+			<spring:url value="/info" var="infoUrl" htmlEscape="true" />
+			<a href="${infoUrl}"><spring:message code="menu.home"/></a>
 		</li>
 		<li class="divider"></li>
 		<li class="nav-header">
-			<spring:url value="/users" var="usersURL" htmlEscape="true" />
-			<a href="${usersURL}"><spring:message code="menu.users"/></a>
+			<spring:url value="/pizzas" var="pizzas" htmlEscape="true" />
+			<a href="${pizzas}"><spring:message code="menu.pizzas"/></a>
 		</li>
 		
 	</ul>
