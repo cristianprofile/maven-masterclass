@@ -19,7 +19,6 @@ and user user "user@ole.com" and password user
 - Spring boot mvc with Spring Security access
 - i18n
 - Responsive bootstrap css witn Tiles 3
-- 
 ------------------------------------------------------------------------------------------------------
 
 To test web mvc app type:  mvn install jetty:run or sort command mvn deploy (jetty:run goal is linked to maven deploy phase)
