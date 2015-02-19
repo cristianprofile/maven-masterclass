@@ -30,17 +30,26 @@ public class WebController {
 		return "home";
 	}
 
+	
+	@RequestMapping("/info")
+	public String info() {
+		logger.info("home controller access");
+		return "info";
+	}
+	
+
+	
 	/**
 	 * List of all users
 	 * 
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping("/users")
+	@RequestMapping("/pizzas")
 	public String users(Model model) {
 
 		logger.info("users controller access");
-		return "users";
+		return "pizzas";
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)

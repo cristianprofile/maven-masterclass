@@ -6,7 +6,6 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.servlet.configuration.EnableWebMvcSecurity;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebMvcSecurity
@@ -15,16 +14,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 
 		http.authorizeRequests()
-				.antMatchers("/users").hasAnyRole("USER").and().authorizeRequests()
-				.antMatchers("/static/**","/j_spring_security_check","/logout","/login","/").permitAll().and().formLogin()
-			    .loginPage("/login").failureUrl("/login?error").permitAll().and()
-			    .logout().permitAll();
+				.antMatchers("/pizzas","/info").hasAnyRole("USER").and().authorizeRequests()
+				.antMatchers("/static/**","/logout","/login").permitAll();
+		
+		http.formLogin().loginPage("/login").failureUrl("/login?error").permitAll();
+		
+		http.logout().logoutSuccessUrl("/").deleteCookies("remember-me").permitAll();
 	}
 
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth)
 			throws Exception {
-		auth.inMemoryAuthentication().withUser("user").password("user")
+		auth.inMemoryAuthentication().withUser("user@ole.com").password("user")
 				.roles("USER");
 	}
 }
