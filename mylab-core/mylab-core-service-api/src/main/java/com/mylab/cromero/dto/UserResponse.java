@@ -1,8 +1,20 @@
 package com.mylab.cromero.dto;
 
+import javax.xml.bind.annotation.XmlRootElement;
 
-public class User {
-	
+/**
+* <h1>BaseResponse</h1>
+* BaseRequest dto request 
+* <p>
+* <b>BaseResponse</b> BaseResponse data transfer object 
+* for sevice layer
+*
+* @author  Cristian Romero Matesanz
+*
+* 
+*/
+public class UserResponse {
+
 	private String user;
 
 	private String name;
@@ -16,7 +28,9 @@ public class User {
 	private Boolean credentialsNonExpired;
 	
 	private Boolean enabled;
-		
+	
+	private String rol;
+	
 	
 
 	public String getUser() {
@@ -74,11 +88,21 @@ public class User {
 	public void setEnabled(Boolean enabled) {
 		this.enabled = enabled;
 	}
+	
+	
+
+	public String getRol() {
+		return rol;
+	}
+
+	public void setRol(String rol) {
+		this.rol = rol;
+	}
 
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("User [user=");
+		builder.append("UserResponse [user=");
 		builder.append(user);
 		builder.append(", name=");
 		builder.append(name);
@@ -96,11 +120,7 @@ public class User {
 		return builder.toString();
 	}
 
-	
 
-
-	
-	
 	
 
 }
