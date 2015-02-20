@@ -1,4 +1,4 @@
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 	<legend>
@@ -6,6 +6,14 @@
 	</legend>
 	
 	<form action="login" method="post" class="form-signin">
+	
+	     <c:if test="${not empty loginError}">
+		     <div class="alert alert-info">  
+	  			<a class="close" data-dismiss="alert">×</a>  
+	  			<strong>Error!</strong> Login error .  
+			</div> 
+             
+        </c:if>
 	
 		<label class="sr-only"><spring:message code="login.user" /> </label>
         <input type="email" name="username" class="form-control" placeholder='<spring:message code="login.user" />' required autofocus>

@@ -20,12 +20,9 @@
 		</div>
 
 		<div class="row-fluid">
-			<div class="span10">
+			<div class="span3">
 				<tiles:insertAttribute name="body" />
 			</div>
-		</div>
-		<div class="row-fluid">
-			<tiles:insertAttribute name="footer" />
 		</div>
 	</div>
 		
