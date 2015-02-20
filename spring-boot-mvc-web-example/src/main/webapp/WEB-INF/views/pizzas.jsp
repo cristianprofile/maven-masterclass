@@ -10,8 +10,8 @@
 		</tr>
 		<c:forEach items="${pizzas}" var="pizza">
 			<tr>
-				<td><c:out value="${pizza.name}" /></td>
-				<td><c:out value="${pizza.email}" /></td> 
+				<td><c:out value="${pizza.id}" /></td>
+				<td><c:out value="${pizza.name}" /></td> 
 			</tr>
 		</c:forEach>
 	</table>

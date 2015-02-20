@@ -12,6 +12,16 @@
 	    <put-attribute name="body"	value="/WEB-INF/views/pizzas.jsp" />
 	</definition>
 	
+	<definition name="users" extends="DefaultTemplate">
+	    <put-attribute name="body"	value="/WEB-INF/views/users.jsp" />
+	</definition>
+	
+	<definition name="addUser" extends="DefaultTemplate">
+	    <put-attribute name="body"	value="/WEB-INF/views/addUser.jsp" />
+	</definition>
+	
+	
+	
 	<definition name="info" extends="DefaultTemplate">
 	    <put-attribute name="body"	value="/WEB-INF/views/info.jsp" />
 	</definition>

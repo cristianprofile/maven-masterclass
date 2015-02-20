@@ -8,7 +8,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.mylab.cromero.dto.User;
+import com.mylab.cromero.dto.UserRequest;
 
 public class CustomUserDetails implements UserDetails {
 
@@ -17,20 +17,19 @@ public class CustomUserDetails implements UserDetails {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private User user;
+	private UserRequest user;
 	
 	private String password;
 	
 	private List<GrantedAuthority> authorities = new LinkedList<GrantedAuthority>();
 	
 	
-	public CustomUserDetails(User user,List<String> roles, String password) {
+	public CustomUserDetails(UserRequest user,List<String> roles, String password) {
 		this.user = user;
 		this.password=password;
 		for (String roleName : roles) {
 			authorities.add(new SimpleGrantedAuthority(roleName));
 		}
-		System.out.println("rolename"+authorities);
 	}
 
 	@Override
