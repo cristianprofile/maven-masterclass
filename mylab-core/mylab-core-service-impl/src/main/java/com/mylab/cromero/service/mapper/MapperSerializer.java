@@ -56,6 +56,7 @@ public class MapperSerializer {
 			user.setSurname(userRequest.getSurname());
 			user.setUser(userRequest.getUser());
 			user.setRol(userRequest.getRol());
+			user.setPassword(userRequest.getPassword());
 			return user;
 		};
 	}
