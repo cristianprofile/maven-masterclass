@@ -20,6 +20,13 @@
 				<form:input path="user" placeholder="Enter user name" />
 				<font color='red'><form:errors path='user' /></font>
 				
+				<form:label for="password" path="user">password</form:label>
+				<form:input type="password" path="password" placeholder="Enter user password" />
+				<font color='red'><form:errors path='password' /></font>
+				
+				
+				
+				
 				<form:label for="name" path="name">Name</form:label>
 				<form:input path="name" placeholder="Enter name" />
 				<font color='red'><form:errors path='name' /></font>

@@ -12,6 +12,10 @@ public class UserForm {
 	
 	@NotNull
     @NotEmpty
+    private String password;
+	
+	@NotNull
+    @NotEmpty
  	private String name;
  	
 	@NotNull
@@ -37,6 +41,16 @@ public class UserForm {
 
 	public void setUser(String user) {
 		this.user = user;
+	}
+	
+	
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public String getName() {

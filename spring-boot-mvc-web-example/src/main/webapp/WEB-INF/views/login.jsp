@@ -8,9 +8,9 @@
 	<form action="login" method="post" class="form-signin">
 	
 	     <c:if test="${not empty loginError}">
-		     <div class="alert alert-info">  
+		     <div class="alert alert-danger">  
 	  			<a class="close" data-dismiss="alert">×</a>  
-	  			<strong>Error!</strong> Login error .  
+	  			<strong><spring:message code="login.error" /></strong>  
 			</div> 
              
         </c:if>

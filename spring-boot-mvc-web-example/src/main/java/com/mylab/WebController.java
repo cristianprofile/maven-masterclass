@@ -115,6 +115,7 @@ public class WebController {
 		userRequest.setSurname(user.getSurname());
 		userRequest.setUser(user.getUser());
 		userRequest.setRol(user.getRol());
+		userRequest.setPassword(user.getPassword());
 		userService.saveUser(userRequest);
 		List<UserResponse> findAllUsers = userService.findAllUsers();
 		model.addAttribute("users", findAllUsers);
@@ -157,7 +158,7 @@ public class WebController {
 	
 	private UserForm resetUserForm() {
 		UserForm userForm = new UserForm();
-		userForm.setRol("ROL_USER");
+		userForm.setRol("ROLE_USER");
 		userForm.setAccountNonExpired(true);
 		userForm.setAccountNonLocked(true);
 		userForm.setCredentialsNonExpired(true);

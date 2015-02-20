@@ -26,6 +26,8 @@ public class User {
     
 	
     private String user;
+    
+    private String password;
 
 	private String name;
 	
@@ -58,11 +60,6 @@ public class User {
         this.version = version;
     }
 
-    @Override
-    public String toString() {
-        return ReflectionToStringBuilder.toString(this,
-                ToStringStyle.SHORT_PREFIX_STYLE);
-    }
 
     public String getName() {
         return this.name;
@@ -78,6 +75,16 @@ public class User {
 
 	public void setUser(String user) {
 		this.user = user;
+	}
+	
+	
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public String getSurname() {
@@ -126,6 +133,35 @@ public class User {
 
 	public void setRol(String rol) {
 		this.rol = rol;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("User [id=");
+		builder.append(id);
+		builder.append(", version=");
+		builder.append(version);
+		builder.append(", user=");
+		builder.append(user);
+		builder.append(", password=");
+		builder.append(password);
+		builder.append(", name=");
+		builder.append(name);
+		builder.append(", surname=");
+		builder.append(surname);
+		builder.append(", accountNonExpired=");
+		builder.append(accountNonExpired);
+		builder.append(", accountNonLocked=");
+		builder.append(accountNonLocked);
+		builder.append(", credentialsNonExpired=");
+		builder.append(credentialsNonExpired);
+		builder.append(", enabled=");
+		builder.append(enabled);
+		builder.append(", rol=");
+		builder.append(rol);
+		builder.append("]");
+		return builder.toString();
 	}
 	
 	

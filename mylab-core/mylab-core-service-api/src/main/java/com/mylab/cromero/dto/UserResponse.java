@@ -41,6 +41,7 @@ public class UserResponse {
 		this.user = user;
 	}
 
+
 	public String getName() {
 		return name;
 	}
