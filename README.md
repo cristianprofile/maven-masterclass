@@ -14,11 +14,12 @@ Multi-module maven project example using SPRING 4 and java 1.8
 NEW SPRING BOOT MVC APP CREATED, ENJOY IT  
 
 run spring-boot-mvc-web-example module with maven  "mvn spring-boot:run" and access to http://localhost:9090/pizza
-and user: "user@ole.com" and password "user".
+and user: "admin@ole.com" and password "admin@ole.com".You can create other users with ROLE_USER at add user left menu
+option.
 
-- Spring boot mvc with Spring Security access
-- i18n
-- Responsive bootstrap css witn Tiles 3
+- Spring boot MVC with Spring Security Access
+- I18n
+- Responsive Bootstrap css witn Tiles 3
 
 ------------------------------------------------------------------------------------------------------
 

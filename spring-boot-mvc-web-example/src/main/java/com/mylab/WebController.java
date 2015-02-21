@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.mylab.cromero.dto.UserRequest;
 import com.mylab.cromero.dto.UserResponse;
@@ -154,6 +155,8 @@ public class WebController {
 		exception.printStackTrace();
 		logger.info("users {}", exception);
 	}
+	
+
 	
 	
 	private UserForm resetUserForm() {
