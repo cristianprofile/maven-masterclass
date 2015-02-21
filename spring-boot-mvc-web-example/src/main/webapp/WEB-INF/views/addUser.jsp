@@ -3,13 +3,6 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
 
-<script>
-
-
-</script>
-
-
-
 <div id="content">	
 	
 	

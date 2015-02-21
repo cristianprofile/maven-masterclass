@@ -4,8 +4,11 @@ import java.util.Objects;
 import java.util.function.Function;
 
 import com.mylab.cromero.domain.Base;
+import com.mylab.cromero.domain.Pizza;
 import com.mylab.cromero.domain.User;
 import com.mylab.cromero.dto.BaseResponse;
+import com.mylab.cromero.dto.PizzaRequest;
+import com.mylab.cromero.dto.PizzaResponse;
 import com.mylab.cromero.dto.UserRequest;
 import com.mylab.cromero.dto.UserResponse;
 
@@ -25,6 +28,7 @@ public class MapperSerializer {
 			return baseResponse;
 		};
 	}
+	
 	
 	public static Function<User, ? extends UserResponse> getUserToUserResponseMapperLambdaFunction() {
 		return user -> {
@@ -62,6 +66,23 @@ public class MapperSerializer {
 	}
 	
 	
+	public static Function<Pizza, ? extends PizzaResponse> getPizzaToPizzaResponseMapperLambdaFunction() {
+		return pizza -> {
+			PizzaResponse pizzaResponse = new PizzaResponse();
+			pizzaResponse.setName(pizza.getName());
+			pizzaResponse.setPrice(pizza.getPrice());
+			return pizzaResponse;
+		};
+	}
+	
+	public static Function<PizzaRequest, ? extends Pizza> getPizzaRequestToPizzaMapperLambdaFunction() {
+		return pizzaRequest -> {
+			Pizza pizza = new Pizza();
+			pizza.setName(pizzaRequest.getName());
+			pizza.setPrice(pizzaRequest.getPrice());
+			return pizza;
+		};
+	}
 	
 	
 

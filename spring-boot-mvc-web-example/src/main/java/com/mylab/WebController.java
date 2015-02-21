@@ -19,10 +19,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+import com.mylab.cromero.dto.PizzaRequest;
+import com.mylab.cromero.dto.PizzaResponse;
 import com.mylab.cromero.dto.UserRequest;
 import com.mylab.cromero.dto.UserResponse;
 import com.mylab.cromero.service.BaseService;
+import com.mylab.cromero.service.PizzaService;
 import com.mylab.cromero.service.UserService;
+import com.mylab.form.PizzaForm;
 import com.mylab.form.UserForm;
 
 @Controller
@@ -36,6 +40,9 @@ public class WebController {
 	
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private PizzaService pizzaService;
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String home() {
@@ -62,6 +69,8 @@ public class WebController {
 	public String pizzas(Model model) {
 
 		logger.info("pizzas controller access");
+		List<PizzaResponse> findAllPizzas = pizzaService.findAllPizzas();
+		model.addAttribute("pizzas", findAllPizzas);
 		return "pizzas";
 	}
 	
@@ -125,6 +134,36 @@ public class WebController {
 	
 	
 	
+	@RequestMapping("/addPizza")
+	public String addPizza(Model model) {
+		
+		logger.info("add pizza get access");
+		PizzaForm pizzaForm = resetPizzaForm();
+		model.addAttribute("pizza", pizzaForm);
+		return "addPizza";
+	}
+	
+	
+	@RequestMapping(value = "/addPizza", method = RequestMethod.POST)
+	public String addPizza(@ModelAttribute("pizza") @Valid PizzaForm pizza,
+			BindingResult result, ModelMap model) {
+		this.logger.debug("add pizza controller ");
+
+		if (result.hasErrors()) {
+			return "addPizza";
+		}
+		
+	
+		PizzaRequest pizzaRequest = new PizzaRequest();
+		pizzaRequest.setName(pizza.getName());
+		pizzaRequest.setPrice(50f);
+		pizzaService.savePizza(pizzaRequest);
+		List<PizzaResponse> findAllPizzas = pizzaService.findAllPizzas();
+		model.addAttribute("pizzas", findAllPizzas);
+		return "pizzas";
+	}
+	
+	
 	
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -168,5 +207,14 @@ public class WebController {
 		userForm.setEnabled(true);
 		return userForm;
 	}
+	
+	private PizzaForm resetPizzaForm() {
+		PizzaForm pizzaForm = new PizzaForm();
+		pizzaForm.setName("");
+		return pizzaForm;
+	}
+	
+	
+	
 
 }
