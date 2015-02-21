@@ -35,8 +35,7 @@ public class BaseServiceImplTest {
 		// create empty repository list to return when i call to findbyname
 		// method
 		List<Base> listaBasesRepositorio = new ArrayList<Base>();
-		when(this.baseRepository.findByName("margarita")).thenReturn(
-				listaBasesRepositorio);
+		when(this.baseRepository.findByName("margarita")).thenReturn(listaBasesRepositorio);
 		BaseRequest base = new BaseRequest();
 		base.setName("margarita");
 		baseService.deleteBase(base);

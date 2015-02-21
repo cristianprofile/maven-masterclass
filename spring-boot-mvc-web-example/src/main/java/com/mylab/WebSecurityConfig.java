@@ -21,6 +21,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	private UserDetailsService userDetailsServiceImpl;
 	
 	
+	/**
+	 * Configure Spring security url filters and login logout Spring Security
+	 */
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
@@ -38,16 +41,22 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //        .invalidSessionUrl("/?invalid");
 	}
 
+	/**
+	 * Configure global security with Bccyptenoncder and custom userDetailService with Spring Security
+	 * @param auth
+	 * @throws Exception
+	 */
 	@Autowired
-	public void configureGlobal(AuthenticationManagerBuilder auth)
-			throws Exception {
-
-//		auth.userDetailsService(userServiceImpl).passwordEncoder(passwordEncoder());
-		auth.userDetailsService(userDetailsServiceImpl);
+	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+		
+		auth.userDetailsService(userDetailsServiceImpl).passwordEncoder(passwordEncoder());
 	}
 	
 	
-	
+	/**
+	 * Bcrypt password encoding configuration, more info at http://www.baeldung.com/spring-security-registration-password-encoding-bcrypt
+	 * @return
+	 */
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 	    return new BCryptPasswordEncoder();

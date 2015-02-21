@@ -20,6 +20,7 @@ option.
 - Spring boot MVC with Spring Security Access
 - I18n
 - Responsive Bootstrap css witn Tiles 3
+- Password encoding with Bcrypt  [BCRYPT password encoding](http://www.baeldung.com/spring-security-registration-password-encoding-bcrypt "BCRYPT password encoding") 
 
 ------------------------------------------------------------------------------------------------------
 
