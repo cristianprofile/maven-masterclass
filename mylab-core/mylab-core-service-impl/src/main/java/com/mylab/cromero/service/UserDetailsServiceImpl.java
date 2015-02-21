@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.mylab.cromero.domain.User;
@@ -22,8 +23,8 @@ import com.mylab.cromero.service.mapper.MapperSerializer;
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
-	// @Autowired
-	// private PasswordEncoder passwordEncoder;
+	 @Autowired
+	 private PasswordEncoder passwordEncoder;
 	
 	@Autowired
 	private UserRepository userRepository;
@@ -51,7 +52,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 			user.setUser("admin@ole.com");
 			this.logger.debug("User found correct :{} ", user);
 			List<String> roles = Arrays.asList("ROLE_ADMIN");
-			return new CustomUserDetails(user, roles, "admin@ole.com");
+			return new CustomUserDetails(user, roles, passwordEncoder.encode("admin@ole.com"));
 
 		}
 		else

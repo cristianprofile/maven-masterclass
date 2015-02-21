@@ -15,6 +15,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.data.domain.Sort.Order;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -52,6 +53,9 @@ public class UserServiceImpl implements UserService {
 	private UserRepository userRepository;
 
 	
+	 @Autowired
+	 private PasswordEncoder passwordEncoder;
+	
 
 	@Override
 	public List<UserResponse> findAllUsers() {
@@ -72,6 +76,7 @@ public class UserServiceImpl implements UserService {
 	public void saveUser(final UserRequest userRequest) {
 		this.logger.debug("Begin operation: save request:{} ", userRequest);
 		User user = MapperSerializer.getUserRequestToUserMapperLambdaFunction().apply(userRequest);
+		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		userRepository.save(user);
 		this.logger.debug("End operation: save request:{} ", user);
 	}

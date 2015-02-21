@@ -15,6 +15,8 @@
 	<bean id="wiser" class="org.subethamail.wiser.Wiser">
 		<property name="port" value="${mail.port}"></property>
 	</bean>
+	
+    <bean id="encoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
 
 
 </beans>
