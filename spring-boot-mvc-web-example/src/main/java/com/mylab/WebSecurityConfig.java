@@ -7,6 +7,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.servlet.configuration.EnableWebMvcSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -23,21 +24,24 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
-		http.authorizeRequests()
-		.antMatchers("/pizzas","/info").hasAnyRole("USER","ADMIN").and()
+		http.authorizeRequests().antMatchers("/pizzas","/info").hasAnyRole("USER","ADMIN").and()
 		.authorizeRequests().antMatchers("/users","/addUser").hasRole("ADMIN").and()
 		.authorizeRequests().antMatchers("/static/**","/logout","/login").permitAll();
 		
 	    http.formLogin().loginPage("/login").failureUrl("/login?error").permitAll();
 		
-		http.logout().logoutSuccessUrl("/").deleteCookies("remember-me").permitAll();
+		http.logout().logoutSuccessUrl("/?logout").deleteCookies("remember-me,JSESSIONID").permitAll();
+		
+		
+		http.sessionManagement().maximumSessions(1).expiredUrl("/?expired").maxSessionsPreventsLogin(true).and()
+        .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED);
+//        .invalidSessionUrl("/?invalid");
 	}
 
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth)
 			throws Exception {
-//		auth.inMemoryAuthentication().withUser("user@ole.com").password("user@ole.com")
-//		.roles("USER");
+
 //		auth.userDetailsService(userServiceImpl).passwordEncoder(passwordEncoder());
 		auth.userDetailsService(userDetailsServiceImpl);
 	}
