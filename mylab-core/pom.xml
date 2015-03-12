@@ -20,18 +20,7 @@
   
   
   <build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-failsafe-plugin</artifactId>
-				<executions>
-					<execution>
-						<goals>
-							<goal>integration-test</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
+		<plugins>			
 			
 <!-- 			Find Bug plugin duplicates and clean code  -->
 			
