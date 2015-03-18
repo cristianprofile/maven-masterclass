@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Maven-masterclass by cristianprofile</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/cristianprofile/maven-masterclass">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/cristianprofile/maven-masterclass/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/cristianprofile/maven-masterclass/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Maven-masterclass</h1>
+          <p>Multi-module maven project example using SPRING 4 and java 1.8 features</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/cristianprofile">cristianprofile</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>
+<a id="spring-maven-java-18" class="anchor" href="#spring-maven-java-18" aria-hidden="true"><span class="octicon octicon-link"></span></a>Spring Maven Java 1.8</h1>
+
+<p>Multi-module maven project example using SPRING 4 and java 1.8</p>
+
+<ul>
+<li>Spring boot module, use Spring without xml and Spring boot actuactor (admin services deployed)</li>
+<li>Simple web app spring mvc using services</li>
+<li>Rest Service implementation example with repository and mail access</li>
+<li>Repository access with spring data jpa</li>
+<li>Unitary and Integration test concept using hsldb and mockito (<a href="http://docs.mockito.googlecode.com/hg/latest/org/mockito/Mockito.html">http://docs.mockito.googlecode.com/hg/latest/org/mockito/Mockito.html</a>)</li>
+</ul>
+
+<hr>
+
+<p>NEW SPRING BOOT MVC APP CREATED, ENJOY IT  </p>
+
+<p>run spring-boot-mvc-web-example module with maven  "mvn spring-boot:run" and access to http://localhost:9090/pizza
+and user: "<a href="mailto:admin@ole.com">admin@ole.com</a>" and password "<a href="mailto:admin@ole.com">admin@ole.com</a>".You can create other users with ROLE_USER at add user left menu
+option.</p>
+
+<ul>
+<li>Spring boot MVC with Spring Security Access</li>
+<li>I18n</li>
+<li>Responsive Bootstrap css witn Tiles 3</li>
+<li>Password encoding with Bcrypt  <a href="http://www.baeldung.com/spring-security-registration-password-encoding-bcrypt" title="BCRYPT password encoding">BCRYPT password encoding</a> </li>
+</ul>
+
+<hr>
+
+<p>To test web mvc app type:  mvn install jetty:run or sort command mvn deploy (jetty:run goal is linked to maven deploy phase)</p>
+
+<ul>
+<li>http://localhost:8080/SpringMVC/   (spring mvc jsp model)</li>
+</ul>
+
+<p>If you want to access to Rest Service example api then you need to type this url:</p>
+
+<ul>
+<li>http://localhost:8080/SpringMVC/base (get list of all bases)</li>
+<li>http://localhost:8080/SpringMVC/base/1 (get base info with id=1)</li>
+<li>http://localhost:8080/SpringMVC/base/1 (delete base info with id=1)</li>
+<li>http://localhost:8080/SpringMVC/base (post create new base sending json info. Example "name":"rolling pizza" )</li>
+<li>http://localhost:8080/SpringMVC/base (update update existing base sending json info. Example {"name":"rolling pizza 2","id":1})</li>
+</ul>
+
+<hr>
+
+<p>If you want to access to Rest Service with Spring boot module "spring-boot-mvc" first run mvn spring-boot:run:</p>
+
+<ul>
+<li>http://localhost:9090/base (get list of all bases)</li>
+<li>http://localhost:9090/base/1 (get base info with id=1)</li>
+<li>http://localhost:9090/base/1 (delete base info with id=1)</li>
+<li>http://localhost:9090/base (post create new base sending json info. Example "name":"rolling pizza" )</li>
+<li>http://localhost:9090/base (update update existing base sending json info. Example {"name":"rolling pizza 2","id":1})</li>
+</ul>
+
+<p>When you run Spring boot app Spring actuator add features to monitore your services:</p>
+
+<ul>
+<li>http://localhost:9091/metrics (Spring Boot Actuator includes a metrics service with 
+“gauge” and “counter” support. A “gauge” records a single value; and a “counter” records a delta 
+(an increment or decrement). Metrics for all HTTP requests are automatically 
+recorded, so if you hit the metrics endpoint should see a sensible response.)</li>
+<li>http://localhost:9091/health (you can check if your app is available)</li>
+<li>http://localhost:9091/mappings (list of your app HTTP endpoints)</li>
+</ul>
+
+<p>More info about Spring Actuator at: <a href="https://github.com/spring-projects/spring-boot/tree/master/spring-boot-actuator" title="Spring Actuator">Spring Actuator</a></p>
+
+<p>You can access ppt at:</p>
+
+<p>Cristian Romero Matesanz WUL4 #Training Thursday3 - Maven <a href="http://www.slideshare.net/cristianromeromatesanz/maven-31576343" title="Cristian Romero Matesanz WUL4 #Training Thursday3 - Maven">Presentation ppt</a></p>
+
+<hr>
+
+<p>Note 1: If you want to use spring profiles you can use maven enviroment variable like this:</p>
+
+<p>-Dspring.profiles.active="profile1,profile2"</p>
+
+<p>New features coming soon!!!!!Spring boot refactor code without xml config 2015!!!!</p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
